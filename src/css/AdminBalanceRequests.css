@@ -1,0 +1,364 @@
+.admin-balance-page {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding-bottom: 35px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-balance-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #fff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.admin-balance-header > button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 12px;
+  background: #f3f4f6;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.admin-balance-header > div {
+  flex: 1;
+}
+
+.admin-balance-header h1 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+}
+
+.admin-balance-header p {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.admin-balance-header > span {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #ecfdf5;
+  color: #166534;
+  display: grid;
+  place-items: center;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.admin-balance-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 16px;
+}
+
+.admin-balance-stats article {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  border: 1px solid #eeeeee;
+}
+
+.admin-balance-stats article > div {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 8px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.admin-balance-stats .pending {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.admin-balance-stats .approved {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.admin-balance-stats .rejected {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.admin-balance-stats span {
+  display: block;
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.admin-balance-stats strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 18px;
+  color: #111827;
+}
+
+/* =========================
+   SEARCH + FILTER
+========================= */
+
+.admin-balance-tools {
+  padding: 0 16px 16px;
+}
+
+.admin-balance-search {
+  height: 44px;
+  padding: 0 13px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.admin-balance-search svg {
+  color: #9ca3af;
+}
+
+.admin-balance-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  color: #111827;
+}
+
+.admin-balance-search input::placeholder {
+  color: #9ca3af;
+}
+
+.admin-balance-filters {
+  display: flex;
+  gap: 7px;
+  margin-top: 11px;
+  overflow-x: auto;
+}
+
+.admin-balance-filters button {
+  flex-shrink: 0;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #6b7280;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.admin-balance-filters button.active {
+  background: #166534;
+  border-color: #166534;
+  color: #fff;
+}
+
+/* =========================
+   REQUEST CARD
+========================= */
+
+.admin-balance-card {
+  margin: 0 16px;
+  background: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.admin-balance-title {
+  padding: 15px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.admin-balance-title h2 {
+  margin: 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+.admin-balance-title p {
+  margin: 3px 0 0;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.admin-balance-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-balance-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.admin-balance-item:last-child {
+  border-bottom: none;
+}
+
+.admin-balance-item-icon {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.admin-balance-item-icon.pending {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.admin-balance-item-icon.approved {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.admin-balance-item-icon.rejected {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* =========================
+   CUSTOMER INFO
+========================= */
+
+.admin-balance-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-balance-info strong {
+  font-size: 12px;
+  color: #111827;
+}
+
+.admin-balance-info span {
+  margin-top: 2px;
+  font-size: 9px;
+  color: #6b7280;
+}
+
+.admin-balance-info small {
+  margin-top: 3px;
+  font-size: 8px;
+  color: #9ca3af;
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.admin-balance-right {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.admin-balance-right > strong {
+  display: block;
+  font-size: 13px;
+  color: #111827;
+}
+
+.admin-balance-right > span {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.admin-balance-right .pending {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.admin-balance-right .approved {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.admin-balance-right .rejected {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.admin-balance-empty {
+  padding: 45px 20px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.admin-balance-empty svg {
+  margin-bottom: 10px;
+}
+
+.admin-balance-empty strong {
+  display: block;
+  font-size: 13px;
+  color: #374151;
+}
+
+.admin-balance-empty span {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .admin-balance-stats {
+    gap: 7px;
+    padding: 12px;
+  }
+
+  .admin-balance-tools {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .admin-balance-card {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .admin-balance-item {
+    padding: 12px;
+  }
+}

@@ -1,0 +1,463 @@
+.withdraw-history-page {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 18px 14px 35px;
+  background: #f5f7f5;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.withdraw-history-header {
+  display: grid;
+  grid-template-columns: 43px 1fr 43px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.withdraw-history-header > button,
+.withdraw-history-header > span {
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  color: #15803d;
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 17px rgba(0, 0, 0, 0.06);
+}
+
+.withdraw-history-header > button {
+  cursor: pointer;
+}
+
+.withdraw-history-header > div {
+  text-align: center;
+}
+
+.withdraw-history-header h1 {
+  margin: 0;
+
+  color: #191919;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.withdraw-history-header p {
+  margin: 4px 0 0;
+
+  color: #999999;
+
+  font-size: 8px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.withdraw-history-hero {
+  min-height: 125px;
+
+  padding: 20px;
+
+  border-radius: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(255, 255, 255, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #087b36,
+      #16a34a,
+      #22c55e
+    );
+
+  box-shadow:
+    0 11px 27px rgba(22, 163, 74, 0.18);
+}
+
+.withdraw-history-hero > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.withdraw-history-hero > div:first-child > span {
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 8px;
+}
+
+.withdraw-history-hero h2 {
+  margin: 4px 0 0;
+
+  color: #ffffff;
+
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.withdraw-history-hero p {
+  margin: 4px 0 0;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 8px;
+}
+
+.withdraw-history-hero > div:last-child {
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   TOOLS
+========================= */
+
+.withdraw-history-tools {
+  margin-top: 14px;
+  padding: 14px;
+
+  border: 1px solid #e8ece9;
+  border-radius: 18px;
+
+  background: #ffffff;
+}
+
+/* SEARCH */
+
+.withdraw-history-search {
+  height: 44px;
+
+  padding: 0 13px;
+
+  border: 1px solid #e2e8e4;
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #999999;
+  background: #f8faf8;
+}
+
+.withdraw-history-search:focus-within {
+  border-color: #16a34a;
+
+  box-shadow:
+    0 0 0 3px rgba(22, 163, 74, 0.07);
+}
+
+.withdraw-history-search input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  color: #222222;
+  background: transparent;
+
+  font-size: 9px;
+}
+
+.withdraw-history-search input::placeholder {
+  color: #aaaaaa;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.withdraw-history-filters {
+  margin-top: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 6px;
+}
+
+.withdraw-history-filters button {
+  height: 35px;
+
+  padding: 0;
+
+  border: 1px solid #e2e8e4;
+  border-radius: 10px;
+
+  color: #777777;
+  background: #ffffff;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.withdraw-history-filters button.active {
+  border-color: #16a34a;
+
+  color: #15803d;
+  background: #eaf9ef;
+}
+
+/* =========================
+   HISTORY CARD
+========================= */
+
+.withdraw-history-card {
+  margin-top: 14px;
+  padding: 15px 14px;
+
+  border: 1px solid #e8ece9;
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.03);
+}
+
+.withdraw-history-title {
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.withdraw-history-title h2 {
+  margin: 0;
+
+  color: #222222;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.withdraw-history-title p {
+  margin: 3px 0 0;
+
+  color: #999999;
+
+  font-size: 8px;
+}
+
+/* =========================
+   HISTORY ITEM
+========================= */
+
+.withdraw-history-item {
+  min-height: 82px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.withdraw-history-item:last-child {
+  border-bottom: 0;
+}
+
+/* ICON */
+
+.withdraw-history-icon {
+  flex: 0 0 42px;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+}
+
+/* PENDING */
+
+.withdraw-history-icon.pending {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+/* APPROVED */
+
+.withdraw-history-icon.approved {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+/* REJECTED */
+
+.withdraw-history-icon.rejected {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+/* INFORMATION */
+
+.withdraw-history-info {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.withdraw-history-info strong {
+  color: #222222;
+
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.withdraw-history-info span {
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  color: #999999;
+
+  font-size: 7px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.withdraw-history-info small {
+  margin-top: 3px;
+
+  color: #aaaaaa;
+
+  font-size: 7px;
+}
+
+/* RIGHT */
+
+.withdraw-history-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 5px;
+}
+
+.withdraw-history-right > strong {
+  color: #222222;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.withdraw-history-right > span {
+  padding: 5px 8px;
+
+  border-radius: 20px;
+
+  font-size: 6px;
+  font-weight: 850;
+}
+
+/* STATUS */
+
+.withdraw-history-right > span.pending {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.withdraw-history-right > span.approved {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.withdraw-history-right > span.rejected {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.withdraw-history-empty {
+  min-height: 220px;
+
+  padding: 30px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #15803d;
+}
+
+.withdraw-history-empty > svg {
+  margin-bottom: 12px;
+}
+
+.withdraw-history-empty strong {
+  color: #222222;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.withdraw-history-empty span {
+  max-width: 220px;
+
+  margin-top: 5px;
+
+  color: #999999;
+
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+  .withdraw-history-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .withdraw-history-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .withdraw-history-item {
+    gap: 8px;
+  }
+}

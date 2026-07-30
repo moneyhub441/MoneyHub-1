@@ -1,0 +1,736 @@
+.home-page {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 18px 14px 95px;
+  background: #f5f7f5;
+}
+
+/* HEADER */
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.home-brand-logo {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: #fff;
+  background: linear-gradient(145deg, #22c55e, #15803d);
+  box-shadow: 0 7px 16px rgba(22, 163, 74, 0.18);
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.home-brand h1 {
+  margin: 0;
+  color: #16a34a;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+}
+
+.home-brand p {
+  margin: 5px 0 0;
+  color: #999;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.home-header-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.home-header-buttons button {
+  position: relative;
+  width: 43px;
+  height: 43px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #292929;
+  background: #fff;
+  box-shadow: 0 5px 17px rgba(0, 0, 0, 0.07);
+}
+
+.home-header-buttons span {
+  position: absolute;
+  top: -3px;
+  right: -2px;
+  width: 17px;
+  height: 17px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #16a34a;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* HERO */
+
+.home-hero {
+  position: relative;
+  min-height: 175px;
+  padding: 24px 18px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 24px;
+  color: #fff;
+  background: linear-gradient(135deg, #087b36, #16a34a 60%, #22c55e);
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.18);
+}
+
+.home-user {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.home-user-avatar {
+  flex: 0 0 57px;
+  width: 57px;
+  height: 57px;
+  display: grid;
+  place-items: center;
+  border: 5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: #15803d;
+  background: #fff;
+}
+
+.home-user p {
+  margin: 0 0 3px;
+  font-size: 12px;
+}
+
+.home-user h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.home-user span {
+  display: block;
+  margin-top: 7px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.home-hero-art {
+  position: absolute;
+  right: -18px;
+  bottom: -15px;
+  opacity: 0.12;
+}
+
+.home-hero-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.circle-one {
+  width: 160px;
+  height: 160px;
+  top: -80px;
+  right: -50px;
+}
+
+.circle-two {
+  width: 120px;
+  height: 120px;
+  bottom: -70px;
+  left: 40px;
+}
+
+/* COMMON WHITE CARD */
+
+.home-white-card {
+  margin-top: 14px;
+  padding: 18px 14px;
+  border: 1px solid #eef0ee;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+}
+
+.home-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.home-section-title h2 {
+  margin: 0;
+  color: #191919;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.home-section-title button {
+  padding: 0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  color: #16a34a;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* QUICK ACTIONS */
+
+.home-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.home-quick-card {
+  min-width: 0;
+  padding: 11px 3px 9px;
+  border: 1px solid #e8eee9;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #222;
+  background: #fff;
+}
+
+.home-quick-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: #16a34a;
+  background: #eaf9ef;
+}
+
+.home-quick-card strong {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-quick-card span {
+  max-width: 100%;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #999;
+  font-size: 7px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-quick-card i {
+  width: 24px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: #16a34a;
+}
+
+/* FEATURED PRODUCT */
+
+.home-featured {
+  margin-top: 14px;
+  padding: 17px;
+  border: 1px solid #d5eedc;
+  border-radius: 23px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  box-shadow: 0 7px 22px rgba(22, 163, 74, 0.07);
+}
+
+.home-featured-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.home-featured-top h3 {
+  margin: 0;
+  color: #191919;
+  font-size: 16px;
+}
+
+.home-featured-top p {
+  margin: 4px 0 0;
+  color: #8b8b8b;
+  font-size: 9px;
+}
+
+.home-featured-top > span {
+  padding: 6px 9px;
+  border-radius: 20px;
+  color: #fff;
+  background: #16a34a;
+  font-size: 8px;
+  font-weight: 850;
+}
+
+.home-product-content {
+  display: grid;
+  grid-template-columns: 41% 1fr;
+  gap: 11px;
+  margin-top: 14px;
+}
+
+.home-product-image {
+  min-height: 145px;
+  padding: 9px;
+  border-radius: 17px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.product-box-art {
+  width: 90px;
+  height: 112px;
+  padding: 10px;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #15803d;
+  background: linear-gradient(145deg, #f4fff6, #d8f8e0);
+  border: 1px solid #bfe8ca;
+  box-shadow: 7px 8px 14px rgba(0, 0, 0, 0.07);
+}
+
+.product-box-art strong {
+  margin-top: 6px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.product-box-art small {
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+
+.home-product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.home-product-details > div {
+  flex: 1;
+  padding: 8px 9px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.home-product-details span {
+  color: #8d8d8d;
+  font-size: 8px;
+}
+
+.home-product-details strong {
+  color: #15803d;
+  font-size: 9px;
+}
+
+.home-product-bottom {
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid #cce9d4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-product-bottom > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-product-bottom span {
+  color: #888;
+  font-size: 9px;
+}
+
+.home-product-bottom strong {
+  margin-top: 2px;
+  color: #181818;
+  font-size: 22px;
+}
+
+.home-product-bottom button {
+  height: 43px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  background: #16a34a;
+  box-shadow: 0 6px 15px rgba(22, 163, 74, 0.18);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.home-view-products {
+  width: 100%;
+  height: 53px;
+  margin-top: 13px;
+  padding: 0 17px;
+  border: 1px solid #cfe9d6;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #15803d;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+/* ACTIVITY */
+
+.home-activity-section {
+  margin-bottom: 5px;
+}
+
+.home-activity-list {
+  overflow: hidden;
+  border: 1px solid #ebeeec;
+  border-radius: 16px;
+}
+
+.home-activity-item {
+  min-height: 67px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.home-activity-item:last-child {
+  border-bottom: 0;
+}
+
+.home-activity-icon {
+  flex: 0 0 41px;
+  width: 41px;
+  height: 41px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #16a34a;
+  background: #eaf9ef;
+}
+
+.home-activity-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-activity-info strong {
+  color: #252525;
+  font-size: 10px;
+}
+
+.home-activity-info span {
+  margin-top: 3px;
+  color: #999;
+  font-size: 8px;
+}
+
+.home-activity-item > b {
+  color: #16a34a;
+  font-size: 9px;
+}
+
+@media (max-width: 350px) {
+  .home-page {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .home-quick-grid {
+    gap: 5px;
+  }
+
+  .home-quick-card strong {
+    font-size: 9px;
+  }
+}
+/* =========================================
+   RECENT TRANSACTIONS
+========================================= */
+
+.home-transactions-section {
+  overflow: hidden;
+  margin-bottom: 90px;
+}
+
+/* HEADING */
+
+.home-transactions-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-transactions-heading-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #c99719;
+  color: #ffffff;
+}
+
+/* =========================================
+   TRANSACTION WINDOW
+========================================= */
+
+.home-transactions-window {
+  position: relative;
+
+  height: 285px;
+
+  margin-top: 14px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #eee5d4;
+  border-radius: 18px;
+}
+
+/* =========================================
+   AUTO MOVING LIST
+========================================= */
+
+.home-transactions-scroll {
+  animation:
+    homeTransactionScroll
+    55s
+    linear
+    infinite;
+
+  will-change: transform;
+}
+
+/* Desktop par hover kare to pause */
+
+.home-transactions-window:hover
+.home-transactions-scroll {
+  animation-play-state: paused;
+}
+
+/* =========================================
+   SINGLE TRANSACTION
+========================================= */
+
+.home-transaction-item {
+  min-height: 92px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px 17px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #eee8dc;
+
+  background: #ffffff;
+}
+
+/* =========================================
+   ICON
+========================================= */
+
+.home-transaction-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+}
+
+/* CREDIT */
+
+.home-transaction-icon.credit {
+  background: #d9faec;
+  color: #0db981;
+}
+
+/* DEBIT */
+
+.home-transaction-icon.debit {
+  background: #fff4d8;
+  color: #c99719;
+}
+
+/* =========================================
+   USER INFORMATION
+========================================= */
+
+.home-transaction-info {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.home-transaction-info strong {
+  overflow: hidden;
+
+  color: #171717;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.home-transaction-info span {
+  overflow: hidden;
+
+  color: #a2a2a2;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================
+   AMOUNT
+========================================= */
+
+.home-transaction-amount {
+  flex-shrink: 0;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.home-transaction-amount.credit {
+  color: #0db981;
+}
+
+.home-transaction-amount.debit {
+  color: #c99719;
+}
+
+/* =========================================
+   BOTTOM TO TOP ANIMATION
+========================================= */
+
+@keyframes homeTransactionScroll {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .home-transactions-window {
+    height: 270px;
+  }
+
+  .home-transaction-item {
+    min-height: 88px;
+
+    padding: 13px 12px;
+
+    gap: 11px;
+  }
+
+  .home-transaction-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+  }
+
+  .home-transaction-info strong {
+    font-size: 13px;
+  }
+
+  .home-transaction-info span {
+    font-size: 10px;
+  }
+
+  .home-transaction-amount {
+    font-size: 13px;
+  }
+
+}

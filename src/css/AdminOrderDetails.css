@@ -1,0 +1,310 @@
+.admin-order-detail-page {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 16px 14px 40px;
+  background: #f5f7f5;
+}
+
+/* HEADER */
+
+.admin-order-detail-header {
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.admin-order-detail-header > button,
+.admin-order-detail-header > span {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #e5ebe7;
+  border-radius: 13px;
+
+  display: grid;
+  place-items: center;
+
+  color: #15803d;
+  background: #ffffff;
+}
+
+.admin-order-detail-header > button {
+  padding: 0;
+  cursor: pointer;
+}
+
+.admin-order-detail-header h1 {
+  margin: 0;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.admin-order-detail-header p {
+  margin: 3px 0 0;
+  color: #999999;
+  font-size: 7px;
+}
+
+/* HERO */
+
+.admin-order-detail-hero {
+  min-height: 185px;
+  padding: 22px;
+
+  border-radius: 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 255, 255, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #087b36,
+      #16a34a,
+      #22c55e
+    );
+
+  box-shadow:
+    0 12px 28px rgba(22, 163, 74, 0.18);
+}
+
+.admin-order-detail-main-icon {
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: 10px;
+
+  border-radius: 16px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.admin-order-detail-hero > span {
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+  opacity: 0.8;
+}
+
+.admin-order-detail-hero h2 {
+  margin: 5px 0 8px;
+
+  color: #ffffff;
+
+  font-size: 27px;
+  font-weight: 950;
+}
+
+.admin-order-detail-status {
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.17);
+
+  font-size: 6px;
+  font-weight: 900;
+}
+
+/* CARD */
+
+.admin-order-detail-card {
+  margin-top: 12px;
+  padding: 15px 14px;
+
+  border: 1px solid #e7ece8;
+  border-radius: 20px;
+
+  background: #ffffff;
+}
+
+.admin-order-detail-title {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.admin-order-detail-title h2 {
+  margin: 0;
+  color: #222222;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.admin-order-detail-title p {
+  margin: 3px 0 0;
+  color: #999999;
+  font-size: 7px;
+}
+
+/* ROW */
+
+.admin-order-detail-row {
+  min-height: 63px;
+  padding: 10px 0;
+
+  border-bottom: 1px solid #eeeeee;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-order-detail-row:last-child {
+  border-bottom: 0;
+}
+
+.admin-order-detail-row-icon {
+  flex: 0 0 39px;
+
+  width: 39px;
+  height: 39px;
+
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  color: #15803d;
+  background: #eaf9ef;
+}
+
+.admin-order-detail-row > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-order-detail-row span {
+  color: #999999;
+  font-size: 6.5px;
+}
+
+.admin-order-detail-row strong {
+  margin-top: 3px;
+
+  color: #222222;
+
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.admin-order-detail-row small {
+  margin-top: 2px;
+  color: #aaaaaa;
+  font-size: 6px;
+}
+
+.admin-order-detail-row .admin-order-active {
+  color: #15803d;
+}
+
+/* NOTICE */
+
+.admin-order-detail-notice {
+  margin-top: 12px;
+  padding: 14px;
+
+  border: 1px solid #dceee1;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.admin-order-detail-notice > svg {
+  flex-shrink: 0;
+}
+
+.admin-order-detail-notice > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-order-detail-notice strong {
+  color: #222222;
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.admin-order-detail-notice span {
+  margin-top: 3px;
+  color: #777777;
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+/* NOT FOUND */
+
+.admin-order-not-found {
+  min-height: 300px;
+
+  border: 1px solid #e7ece8;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #aaaaaa;
+  background: #ffffff;
+}
+
+.admin-order-not-found h2 {
+  margin: 10px 0 0;
+  color: #333333;
+  font-size: 14px;
+}
+
+.admin-order-not-found p {
+  margin: 5px 0 15px;
+  color: #999999;
+  font-size: 8px;
+}
+
+.admin-order-not-found button {
+  padding: 10px 15px;
+
+  border: 0;
+  border-radius: 10px;
+
+  color: #ffffff;
+  background: #15803d;
+
+  font-size: 8px;
+  font-weight: 850;
+
+  cursor: pointer;
+}
+
+@media (max-width: 360px) {
+  .admin-order-detail-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

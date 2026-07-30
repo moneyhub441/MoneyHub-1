@@ -1,0 +1,325 @@
+.admin-balance-detail-page {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding-bottom: 35px;
+}
+
+/* HEADER */
+
+.admin-balance-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #fff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.admin-balance-detail-header > button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 12px;
+  background: #f3f4f6;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.admin-balance-detail-header > div {
+  flex: 1;
+}
+
+.admin-balance-detail-header h1 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+}
+
+.admin-balance-detail-header p {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.admin-balance-detail-header > span {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #ecfdf5;
+  color: #166534;
+  display: grid;
+  place-items: center;
+}
+
+/* HERO */
+
+.admin-balance-detail-hero {
+  margin: 16px;
+  padding: 24px 16px;
+  background: #166534;
+  border-radius: 18px;
+  text-align: center;
+  color: #fff;
+}
+
+.admin-balance-detail-main-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.14);
+  display: grid;
+  place-items: center;
+}
+
+.admin-balance-detail-hero > span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.admin-balance-detail-hero h2 {
+  margin: 7px 0 10px;
+  font-size: 28px;
+}
+
+.admin-balance-detail-status {
+  width: fit-content;
+  margin: auto;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.admin-balance-detail-status.pending {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.admin-balance-detail-status.approved {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.admin-balance-detail-status.rejected {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* INFORMATION CARD */
+
+.admin-balance-detail-card {
+  margin: 0 16px;
+  background: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.admin-balance-detail-title {
+  padding: 15px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.admin-balance-detail-title h2 {
+  margin: 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+.admin-balance-detail-title p {
+  margin: 3px 0 0;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+/* ROW */
+
+.admin-balance-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 15px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.admin-balance-detail-row:last-child {
+  border-bottom: none;
+}
+
+.admin-balance-detail-row-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #ecfdf5;
+  color: #166534;
+  display: grid;
+  place-items: center;
+}
+
+.admin-balance-detail-row > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-balance-detail-row span {
+  font-size: 9px;
+  color: #9ca3af;
+}
+
+.admin-balance-detail-row strong {
+  margin-top: 2px;
+  font-size: 11px;
+  color: #111827;
+}
+
+.admin-balance-detail-row small {
+  margin-top: 2px;
+  font-size: 8px;
+  color: #9ca3af;
+}
+
+/* STATUS TEXT */
+
+.admin-balance-detail-status-text.pending {
+  color: #ea580c;
+}
+
+.admin-balance-detail-status-text.approved {
+  color: #16a34a;
+}
+
+.admin-balance-detail-status-text.rejected {
+  color: #dc2626;
+}
+
+/* ADMIN ACTIONS */
+
+.admin-balance-detail-actions {
+  margin: 16px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+}
+
+.admin-balance-detail-actions h2 {
+  margin: 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+.admin-balance-detail-actions p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.admin-balance-detail-action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.admin-balance-detail-action-buttons button {
+  height: 42px;
+  border: none;
+  border-radius: 11px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-balance-detail-action-buttons .reject {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.admin-balance-detail-action-buttons .approve {
+  background: #166534;
+  color: #fff;
+}
+
+/* NOTICE */
+
+.admin-balance-detail-notice {
+  display: flex;
+  gap: 10px;
+  margin: 16px;
+  padding: 14px;
+  background: #ecfdf5;
+  border: 1px solid #d1fae5;
+  border-radius: 14px;
+  color: #166534;
+}
+
+.admin-balance-detail-notice svg {
+  flex-shrink: 0;
+}
+
+.admin-balance-detail-notice div {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-balance-detail-notice strong {
+  font-size: 11px;
+}
+
+.admin-balance-detail-notice span {
+  margin-top: 3px;
+  font-size: 9px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+/* NOT FOUND */
+
+.admin-balance-detail-not-found {
+  margin: 30px 16px;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 16px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.admin-balance-detail-not-found h2 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  color: #111827;
+}
+
+.admin-balance-detail-not-found p {
+  font-size: 10px;
+}
+
+.admin-balance-detail-not-found button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #166534;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .admin-balance-detail-hero,
+  .admin-balance-detail-card,
+  .admin-balance-detail-actions,
+  .admin-balance-detail-notice {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}

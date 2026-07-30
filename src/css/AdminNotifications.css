@@ -1,0 +1,377 @@
+.admin-notification-page {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 16px 14px 40px;
+  background: #f5f7f5;
+}
+
+/* HEADER */
+
+.admin-notification-header {
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.admin-notification-header > button,
+.admin-notification-header > span {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e5ebe7;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.admin-notification-header > button {
+  padding: 0;
+  color: #444;
+  cursor: pointer;
+}
+
+.admin-notification-header > span {
+  color: #15803d;
+}
+
+.admin-notification-header h1 {
+  margin: 0;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.admin-notification-header p {
+  margin: 3px 0 0;
+  color: #999;
+  font-size: 7px;
+}
+
+/* HERO */
+
+.admin-notification-hero {
+  min-height: 135px;
+  padding: 20px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 255, 255, 0.2),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #087b36,
+      #16a34a,
+      #22c55e
+    );
+
+  box-shadow:
+    0 12px 28px
+    rgba(22, 163, 74, 0.2);
+}
+
+.admin-notification-hero > div:first-child > span {
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.admin-notification-hero h2 {
+  margin: 6px 0 0;
+  font-size: 23px;
+  font-weight: 950;
+}
+
+.admin-notification-hero p {
+  margin: 5px 0 0;
+  font-size: 7px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.admin-notification-hero > div:last-child {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.admin-notification-hero > div:last-child > span {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border: 2px solid #16a34a;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: #dc2626;
+  color: #fff;
+  font-size: 6px;
+  font-weight: 900;
+}
+
+/* TOOLS */
+
+.admin-notification-tools {
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid #e7ece8;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.admin-notification-tools > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-notification-tools strong {
+  font-size: 10px;
+  color: #222;
+}
+
+.admin-notification-tools span {
+  margin-top: 3px;
+  font-size: 6px;
+  color: #999;
+}
+
+.admin-notification-tools button {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #eaf9ef;
+  color: #15803d;
+  font-size: 7px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* CARD */
+
+.admin-notification-card {
+  margin-top: 12px;
+  padding: 4px 14px;
+  border: 1px solid #e7ece8;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.admin-notification-item {
+  width: 100%;
+  min-height: 82px;
+  padding: 11px 0;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+}
+
+.admin-notification-item:last-child {
+  border-bottom: 0;
+}
+
+.admin-notification-item.unread {
+  background: #fbfffc;
+}
+
+.admin-notification-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+}
+
+.admin-notification-icon.withdraw {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.admin-notification-icon.balance {
+  color: #15803d;
+  background: #eaf9ef;
+}
+
+.admin-notification-icon.order {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.admin-notification-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-notification-info > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.admin-notification-info strong {
+  font-size: 8px;
+  color: #222;
+}
+
+.admin-unread-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a34a;
+}
+
+.admin-notification-info p {
+  margin: 3px 0 0;
+  overflow: hidden;
+  color: #777;
+  font-size: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-notification-info small {
+  display: block;
+  margin-top: 4px;
+  color: #aaa;
+  font-size: 6px;
+}
+
+.admin-notification-right {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.admin-notification-right > strong {
+  color: #222;
+  font-size: 9px;
+}
+
+.admin-notification-right > span {
+  margin-top: 5px;
+  padding: 3px 6px;
+  border-radius: 20px;
+  font-size: 5px;
+  font-weight: 850;
+}
+
+.admin-notification-right .pending {
+  color: #b45309;
+  background: #fff7ed;
+}
+
+.admin-notification-right .approved,
+.admin-notification-right .active {
+  color: #15803d;
+  background: #eaf9ef;
+}
+
+.admin-notification-right .rejected {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+/* EMPTY */
+
+.admin-notification-empty {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+}
+
+.admin-notification-empty strong {
+  margin-top: 9px;
+  color: #333;
+  font-size: 11px;
+}
+
+.admin-notification-empty span {
+  margin-top: 4px;
+  color: #999;
+  font-size: 7px;
+}
+
+/* QUICK */
+
+.admin-notification-quick {
+  margin-top: 12px;
+  padding: 15px 14px;
+  border: 1px solid #e7ece8;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.admin-notification-quick h2 {
+  margin: 0 0 12px;
+  color: #222;
+  font-size: 11px;
+}
+
+.admin-notification-quick > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.admin-notification-quick button {
+  min-height: 67px;
+  padding: 8px 4px;
+  border: 1px solid #edf0ed;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #fafcfa;
+  color: #15803d;
+  cursor: pointer;
+}
+
+.admin-notification-quick button span {
+  color: #555;
+  font-size: 6px;
+  font-weight: 750;
+}
+
+@media (max-width: 360px) {
+  .admin-notification-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .admin-notification-quick > div {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
