@@ -74,6 +74,7 @@ type CurrentUser = {
   id?: string;
   name?: string;
   mobile?: string;
+  walletBalance?: number;
 };
 
 /* =========================
@@ -284,7 +285,9 @@ function Wallet() {
 
   const walletBalance =
     Number(
-      wallet?.balance || 0
+      wallet?.balance ??
+      currentUser?.walletBalance ??
+      0
     );
 
   const availableBalance =
