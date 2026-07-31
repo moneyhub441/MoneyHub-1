@@ -217,6 +217,10 @@ function AddBalance() {
       const data:
         CreateOrderResponse =
         await response.json();
+        console.log(
+  "Cashfree Create Order Response:",
+  data
+);
 
       if (
         !response.ok ||
@@ -227,7 +231,10 @@ function AddBalance() {
             "Unable to create payment order."
         );
       }
-
+console.log(
+ "Payment Session:",
+ data.paymentSessionId
+);
       if (
         !data.paymentSessionId ||
         !data.orderId
@@ -260,9 +267,9 @@ function AddBalance() {
       ========================= */
 
       const cashfree =
-        await load({
-          mode: "production",
-        });
+  await load({
+    mode: "sandbox",
+  });
 
       /* =========================
          OPEN CHECKOUT
