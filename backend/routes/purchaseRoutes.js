@@ -717,6 +717,8 @@ router.get(
             productName:
               purchase.productName,
 
+              
+
             image:
               purchase.productImage ||
               "",
@@ -804,6 +806,10 @@ router.get(
    ADMIN ALL PURCHASES
 ========================= */
 
+/* =========================
+   ADMIN ALL PURCHASES
+========================= */
+
 router.get(
   "/admin/all",
   async (req, res) => {
@@ -881,6 +887,10 @@ router.get(
 
                   : null,
 
+
+              // ✅ ADD PRODUCT ID
+              productId:
+                purchase.productId,
 
 
               productName:

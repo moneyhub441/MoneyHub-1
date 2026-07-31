@@ -5,7 +5,11 @@ import {
   ShoppingBag,
 } from "lucide-react";
 
-import { useMemo, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../css/AdminProducts.css";
@@ -95,6 +99,17 @@ const productsData: Product[] = [
 
 function AdminProducts() {
   const navigate = useNavigate();
+  const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000";
+
+
+const [purchases, setPurchases] =
+  useState<any[]>([]);
+
+
+const [loadingSales, setLoadingSales] =
+  useState(true);
 
   const [filter, setFilter] =
     useState<FilterType>("All");
@@ -118,23 +133,63 @@ function AdminProducts() {
         product.type === "Welfare"
     ).length;
 
-  /* =========================
-     PURCHASE DATA
-  ========================= */
+  
+/* =========================
+   LOAD PURCHASE SALES
+========================= */
 
-  let purchases: any[] = [];
+useEffect(()=>{
 
-  try {
-    const saved =
-      localStorage.getItem("myProducts");
+const loadPurchases =
+async()=>{
 
-    purchases = saved
-      ? JSON.parse(saved)
-      : [];
-  } catch {
-    purchases = [];
-  }
+try{
 
+const response =
+await fetch(
+`${API_URL}/api/purchases/admin/all`
+);
+
+
+const data =
+await response.json();
+
+
+if(data.success){
+
+setPurchases(
+Array.isArray(data.purchases)
+?
+data.purchases
+:
+[]
+);
+
+}
+
+
+}catch(error){
+
+console.log(
+"Sales load error",
+error
+);
+
+
+}
+finally{
+
+setLoadingSales(false);
+
+}
+
+};
+
+
+loadPurchases();
+
+
+},[API_URL]);
   /* =========================
      FILTER PRODUCTS
   ========================= */
@@ -178,14 +233,26 @@ function AdminProducts() {
   ========================= */
 
   const getSalesCount = (
-    productId: number
-  ) => {
-    return purchases.filter(
-      (purchase) =>
-        Number(purchase.id) ===
-        Number(productId)
-    ).length;
-  };
+  productId:number
+)=>{
+
+return purchases.filter(
+(purchase)=>
+
+String(
+purchase.productId ||
+purchase.product?._id ||
+purchase.id
+)
+
+===
+
+String(productId)
+
+).length;
+
+
+};
 
   return (
     <main className="admin-products-page">
@@ -411,10 +478,14 @@ function AdminProducts() {
                       </small>
 
                       <small>
-                        {getSalesCount(
-                          product.id
-                        )}{" "}
-                        Sales
+                        {
+loadingSales
+?
+"Loading..."
+:
+getSalesCount(product.id)
+}
+{" "}Sales
                       </small>
 
                     </div>

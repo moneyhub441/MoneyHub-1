@@ -11,86 +11,122 @@ import {
 } from "lucide-react";
 
 import { useNavigate, useParams } from "react-router-dom";
+import {
+  useEffect,
+  useState,
+} from "react";
 
 import "../css/AdminOrderDetails.css";
 
-type PurchasedProduct = {
-  id: number;
-  purchaseId: number;
-  userId: number;
-  name: string;
-  category?: string;
-  validity?: string;
-  price: number;
-  image?: string;
-  status: string;
-  purchasedAt?: string;
-};
 
-type Customer = {
-  id: number;
-  name: string;
-  mobile: string;
-  email?: string;
-};
 
 function AdminOrderDetails() {
   const navigate = useNavigate();
   const { id } = useParams();
+const API_URL =
+import.meta.env.VITE_API_URL ||
+"http://localhost:5000";
 
+
+const [order,setOrder] =
+useState<any>(null);
+
+
+const [loading,setLoading] =
+useState(true);
   // =========================
   // LOAD ORDERS
   // =========================
+useEffect(()=>{
 
-  let orders: PurchasedProduct[] = [];
+const loadOrder =
+async()=>{
 
-  try {
-    const saved =
-      localStorage.getItem("myProducts");
+try{
 
-    orders = saved
-      ? JSON.parse(saved)
-      : [];
-  } catch {
-    orders = [];
-  }
+const response =
+await fetch(
+`${API_URL}/api/purchases/${id}`
+);
+
+
+const data =
+await response.json();
+
+
+if(data.success){
+
+setOrder(
+data.purchase
+);
+
+}
+
+
+}catch(error){
+
+console.log(
+"Order detail error",
+error
+);
+
+
+}
+finally{
+
+setLoading(false);
+
+}
+
+};
+
+
+loadOrder();
+
+
+},[
+API_URL,
+id
+]);
+
 
   // =========================
   // FIND ORDER
   // =========================
 
-  const order = orders.find(
-    (item) =>
-      Number(item.purchaseId) === Number(id)
-  );
+
 
   // =========================
   // LOAD CUSTOMERS
   // =========================
 
-  let customers: Customer[] = [];
-
-  try {
-    const saved =
-      localStorage.getItem("customers");
-
-    customers = saved
-      ? JSON.parse(saved)
-      : [];
-  } catch {
-    customers = [];
-  }
+  
 
   // =========================
   // CUSTOMER
   // =========================
 
-  const customer = customers.find(
-    (item) =>
-      Number(item.id) ===
-      Number(order?.userId)
-  );
+ const customer =
+  order?.customer || null;
+if(loading){
 
+return (
+
+<main className="admin-order-detail-page">
+
+<div className="admin-order-not-found">
+
+<h2>
+Loading Order...
+</h2>
+
+</div>
+
+</main>
+
+);
+
+}
   // =========================
   // NOT FOUND
   // =========================

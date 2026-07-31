@@ -301,7 +301,17 @@ function Wallet() {
   ========================= */
 
   const recentTransactions =
-    transactions.slice(0, 3);
+  [...transactions]
+    .sort(
+      (a, b) =>
+        new Date(
+          b.createdAt
+        ).getTime() -
+        new Date(
+          a.createdAt
+        ).getTime()
+    )
+    .slice(0, 3);
 
   /* =========================
      DATE

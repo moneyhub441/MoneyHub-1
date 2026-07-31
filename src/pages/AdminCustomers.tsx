@@ -6,7 +6,11 @@ import {
   Users,
 } from "lucide-react";
 
-import { useMemo, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../css/AdminCustomers.css";
@@ -22,6 +26,17 @@ type Customer = {
 
 function AdminCustomers() {
   const navigate = useNavigate();
+  const API_URL =
+import.meta.env.VITE_API_URL ||
+"http://localhost:5000";
+
+
+const [customers,setCustomers] =
+useState<Customer[]>([]);
+
+
+const [loading,setLoading] =
+useState(true);
 
   const [search, setSearch] = useState("");
 
@@ -29,39 +44,56 @@ function AdminCustomers() {
   // LOAD CUSTOMERS
   // =========================
 
-  const loadCustomers = (): Customer[] => {
-    try {
-      const savedCustomers =
-        localStorage.getItem("customers");
+  
 
-      if (savedCustomers) {
-        return JSON.parse(savedCustomers);
-      }
+  useEffect(()=>{
 
-      /*
-        TEMPORARY DEVELOPMENT DATA
+const loadCustomers =
+async()=>{
 
-        Backend connect hone ke baad
-        ye fallback remove kar dena.
-      */
+try{
 
-      return [
-        {
-          id: 1,
-          name: "Demo User",
-          email: "user@example.com",
-          mobile: "9876543210",
-          status: "Active",
-          joinedAt: new Date().toISOString(),
-        },
-      ];
-    } catch {
-      return [];
-    }
-  };
+const response =
+await fetch(
+`${API_URL}/api/auth/users`
+);
 
-  const [customers] =
-    useState<Customer[]>(loadCustomers);
+
+const data =
+await response.json();
+
+
+if(data.success){
+
+setCustomers(
+data.users || []
+);
+
+}
+
+
+}catch(error){
+
+console.log(
+"Customers error",
+error
+);
+
+}
+
+finally{
+
+setLoading(false);
+
+}
+
+};
+
+
+loadCustomers();
+
+
+},[API_URL]);
 
   // =========================
   // FILTER
@@ -201,18 +233,17 @@ function AdminCustomers() {
           </p>
         </div>
 
-        {filteredCustomers.length === 0 ? (
+        {loading ? (
           <div className="admin-customer-empty">
             <Users size={36} />
 
             <strong>
-              No Customers Found
-            </strong>
+Loading Customers...
+</strong>
 
-            <span>
-              Registered customers will appear
-              here.
-            </span>
+<span>
+Please wait.
+</span>
           </div>
         ) : (
           <div className="admin-customer-list">
