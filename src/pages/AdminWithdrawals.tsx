@@ -14,7 +14,7 @@ import {
 } from "react";
 
 import { useNavigate } from "react-router-dom";
-
+import API_URL from "../config/api";
 import "../css/AdminWithdrawals.css";
 
 /* =========================
@@ -75,9 +75,7 @@ function AdminWithdrawals() {
      API URL
   ========================= */
 
-  const API_URL =
-    import.meta.env.VITE_API_URL ||
-    "http://localhost:5000";
+  
 
   /* =========================
      STATES

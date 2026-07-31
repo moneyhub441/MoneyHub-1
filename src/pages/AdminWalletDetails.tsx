@@ -22,7 +22,7 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
-
+import API_URL from "../config/api";
 import "../css/AdminWalletDetails.css";
 
 /* =========================
@@ -117,9 +117,7 @@ function AdminWalletDetails() {
      API URL
   ========================= */
 
-  const API_URL =
-    import.meta.env.VITE_API_URL ||
-    "http://localhost:5000";
+
 
   /* =========================
      STATES

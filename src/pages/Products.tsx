@@ -21,7 +21,7 @@ import {
   getProducts,
   type Product,
 } from "../data/productStorage";
-
+import API_URL from "../config/api";
 import "../css/Products.css";
 
 /* =========================
@@ -85,9 +85,7 @@ function Products() {
      API URL
   ========================= */
 
-  const API_URL =
-    import.meta.env.VITE_API_URL ||
-    "http://localhost:5000";
+ 
 
   /* =========================
      CURRENT USER

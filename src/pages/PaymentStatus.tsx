@@ -4,7 +4,7 @@ import {
   XCircle,
   WalletCards,
 } from "lucide-react";
-
+import API_URL from "../config/api";
 import {
   useEffect,
   useState,
@@ -47,9 +47,7 @@ function PaymentStatus() {
   const [amount, setAmount] =
     useState(0);
 
-  const API_URL =
-    import.meta.env.VITE_API_URL ||
-    "http://localhost:5000";
+ 
 
   useEffect(() => {
     const verifyPayment =

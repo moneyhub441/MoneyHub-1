@@ -15,7 +15,7 @@ import {
   useEffect,
   useState,
 } from "react";
-
+import API_URL from "../config/api";
 import "../css/AdminOrderDetails.css";
 
 
@@ -23,9 +23,6 @@ import "../css/AdminOrderDetails.css";
 function AdminOrderDetails() {
   const navigate = useNavigate();
   const { id } = useParams();
-const API_URL =
-import.meta.env.VITE_API_URL ||
-"http://localhost:5000";
 
 
 const [order,setOrder] =

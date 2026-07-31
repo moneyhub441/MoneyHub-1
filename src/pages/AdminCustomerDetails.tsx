@@ -18,7 +18,7 @@ import {
   useEffect,
   useState
 } from "react";
-
+import API_URL from "../config/api";
 import "../css/AdminCustomerDetails.css";
 
 type Customer = {
@@ -52,9 +52,7 @@ function AdminCustomerDetails() {
   // LOAD CUSTOMERS
   // =========================
 
-const API_URL =
-import.meta.env.VITE_API_URL ||
-"http://localhost:5000";
+
 
 
 const [customer,setCustomer] =

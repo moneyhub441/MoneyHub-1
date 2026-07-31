@@ -10,7 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { load } from "@cashfreepayments/cashfree-js";
-
+import API_URL from "../config/api";
 import "../css/AddBalance.css";
 
 const quickAmounts = [
@@ -63,10 +63,7 @@ function AddBalance() {
      API URL
   ========================= */
 
-  const API_URL =
-    import.meta.env.VITE_API_URL ||
-    "http://localhost:5000";
-
+  
   /* =========================
      GET CURRENT USER
   ========================= */

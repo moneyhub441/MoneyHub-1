@@ -15,6 +15,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import BottomNav from "../components/BottomNav";
+import API_URL from "../config/api";
 import "../css/MyProducts.css";
 
 /* =========================
@@ -84,9 +85,7 @@ const ONE_DAY =
 function MyProducts() {
   const navigate = useNavigate();
 
-  const API_URL =
-    import.meta.env.VITE_API_URL ||
-    "http://localhost:5000";
+
 
   /* =========================
      CURRENT USER

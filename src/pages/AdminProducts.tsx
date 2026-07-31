@@ -11,7 +11,7 @@ import {
   useState,
 } from "react";
 import { useNavigate } from "react-router-dom";
-
+import API_URL from "../config/api";
 import "../css/AdminProducts.css";
 
 type Product = {
@@ -99,9 +99,7 @@ const productsData: Product[] = [
 
 function AdminProducts() {
   const navigate = useNavigate();
-  const API_URL =
-  import.meta.env.VITE_API_URL ||
-  "http://localhost:5000";
+ 
 
 
 const [purchases, setPurchases] =
