@@ -9,12 +9,20 @@ import {
   WalletCards,
 } from "lucide-react";
 
-import { useNavigate, useParams } from "react-router-dom";
+import {
+  useNavigate,
+  useParams
+} from "react-router-dom";
+
+import {
+  useEffect,
+  useState
+} from "react";
 
 import "../css/AdminCustomerDetails.css";
 
 type Customer = {
-  id: number;
+   id: string;
   name: string;
   email: string;
   mobile: string;
@@ -44,35 +52,65 @@ function AdminCustomerDetails() {
   // LOAD CUSTOMERS
   // =========================
 
-  let customers: Customer[] = [];
+const API_URL =
+import.meta.env.VITE_API_URL ||
+"http://localhost:5000";
 
-  try {
-    const saved =
-      localStorage.getItem("customers");
 
-    customers = saved
-      ? JSON.parse(saved)
-      : [
-          {
-            id: 1,
-            name: "Demo User",
-            email: "user@example.com",
-            mobile: "9876543210",
-            status: "Active",
-            joinedAt: new Date().toISOString(),
-          },
-        ];
-  } catch {
-    customers = [];
-  }
+const [customer,setCustomer] =
+useState<Customer | null>(null);
 
+
+useEffect(()=>{
+
+const loadCustomer = async()=>{
+
+try{
+
+const response =
+await fetch(
+`${API_URL}/api/auth/users/${id}`
+);
+
+
+const data =
+await response.json();
+
+
+if(data.success){
+
+setCustomer(
+data.user
+);
+
+}
+
+
+}catch(error){
+
+console.log(
+"Customer error",
+error
+);
+
+}
+
+};
+
+
+if(id){
+
+loadCustomer();
+
+}
+
+
+},[id]);
   // =========================
   // FIND CUSTOMER
   // =========================
 
-  const customer = customers.find(
-    (item) => Number(item.id) === Number(id)
-  );
+ 
 
   // =========================
   // NOT FOUND
