@@ -16,7 +16,7 @@ import API_URL from "../config/api";
 import "../css/AdminCustomers.css";
 
 type Customer = {
-  id: number;
+  id: string;
   name: string;
   email: string;
   mobile: string;
@@ -53,7 +53,7 @@ try{
 
 const response =
 await fetch(
-`${API_URL}/api/auth/users`
+`${API_URL}/api/auth`
 );
 
 

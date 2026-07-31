@@ -185,7 +185,7 @@ await Promise.all([
 
 
 fetch(
-`${API_URL}/api/auth/admin/users`
+`${API_URL}/api/auth`
 ),
 
 

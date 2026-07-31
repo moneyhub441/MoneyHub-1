@@ -67,7 +67,7 @@ try{
 
 const response =
 await fetch(
-`${API_URL}/api/auth/users/${id}`
+`${API_URL}/api/auth/${id}`
 );
 
 

@@ -10,138 +10,60 @@ import {
   useMemo,
   useState,
 } from "react";
+
 import { useNavigate } from "react-router-dom";
 import API_URL from "../config/api";
 import "../css/AdminProducts.css";
 
+
 type Product = {
-  id: number;
+  id: string;
   name: string;
   category: string;
   validity: string;
   price: number;
   image: string;
   type: "Daily" | "Welfare";
-  badge?: string;
+  sales:number;
 };
+
 
 type FilterType =
   | "All"
   | "Daily"
   | "Welfare";
 
-/* =========================
-   PRODUCTS
-========================= */
 
-const productsData: Product[] = [
-  {
-    id: 1,
-    name: "Special Product",
-    category: "Premium",
-    validity: "30 Days",
-    price: 700,
-    image: "/products/product-1.png",
-    type: "Daily",
-    badge: "POPULAR",
-  },
+function AdminProducts(){
 
-  {
-    id: 2,
-    name: "Product 2",
-    category: "Standard",
-    validity: "30 Days",
-    price: 1200,
-    image: "/products/product-2.png",
-    type: "Daily",
-  },
-
-  {
-    id: 3,
-    name: "Product 3",
-    category: "Premium",
-    validity: "60 Days",
-    price: 2500,
-    image: "/products/product-3.png",
-    type: "Daily",
-  },
-
-  {
-    id: 4,
-    name: "Product 4",
-    category: "Premium Plus",
-    validity: "90 Days",
-    price: 5000,
-    image: "/products/product-4.png",
-    type: "Daily",
-  },
-
-  {
-    id: 101,
-    name: "Welfare Product 1",
-    category: "Welfare",
-    validity: "30 Days",
-    price: 500,
-    image: "/products/product-1.png",
-    type: "Welfare",
-  },
-
-  {
-    id: 102,
-    name: "Welfare Product 2",
-    category: "Welfare Plus",
-    validity: "60 Days",
-    price: 1000,
-    image: "/products/product-2.png",
-    type: "Welfare",
-  },
-];
-
-function AdminProducts() {
-  const navigate = useNavigate();
- 
+const navigate = useNavigate();
 
 
-const [purchases, setPurchases] =
-  useState<any[]>([]);
+const [products,setProducts] =
+useState<Product[]>([]);
 
 
-const [loadingSales, setLoadingSales] =
-  useState(true);
+const [loading,setLoading] =
+useState(true);
 
-  const [filter, setFilter] =
-    useState<FilterType>("All");
 
-  const [search, setSearch] =
-    useState("");
+const [filter,setFilter] =
+useState<FilterType>("All");
 
-  /* =========================
-     COUNTS
-  ========================= */
 
-  const dailyCount =
-    productsData.filter(
-      (product) =>
-        product.type === "Daily"
-    ).length;
+const [search,setSearch] =
+useState("");
 
-  const welfareCount =
-    productsData.filter(
-      (product) =>
-        product.type === "Welfare"
-    ).length;
 
-  
-/* =========================
-   LOAD PURCHASE SALES
-========================= */
 
 useEffect(()=>{
 
-const loadPurchases =
-async()=>{
+
+const loadProducts = async()=>{
+
 
 try{
+
 
 const response =
 await fetch(
@@ -149,375 +71,524 @@ await fetch(
 );
 
 
+
 const data =
 await response.json();
 
 
+
 if(data.success){
 
-setPurchases(
-Array.isArray(data.purchases)
-?
-data.purchases
-:
-[]
+
+const map:any = {};
+
+
+
+data.purchases.forEach(
+(item:any)=>{
+
+
+const id =
+String(
+item.productId ||
+item.productName
 );
+
+
+
+if(!map[id]){
+
+
+map[id]={
+
+id,
+
+name:
+item.productName,
+
+category:
+"Premium",
+
+
+validity:
+`${item.duration || 0} Days`,
+
+
+price:
+Number(item.price || 0),
+
+
+image:
+item.productImage || "",
+
+
+type:
+"Daily",
+
+
+sales:1
+
+};
+
+
+}else{
+
+
+map[id].sales++;
+
+}
+
+
+});
+
+
+setProducts(
+Object.values(map)
+);
+
 
 }
 
 
 }catch(error){
 
+
 console.log(
-"Sales load error",
+"Products error",
 error
 );
 
 
 }
+
 finally{
 
-setLoadingSales(false);
+setLoading(false);
 
 }
+
 
 };
 
 
-loadPurchases();
+
+loadProducts();
 
 
-},[API_URL]);
-  /* =========================
-     FILTER PRODUCTS
-  ========================= */
+},[]);
 
-  const filteredProducts =
-    useMemo(() => {
-      const searchValue =
-        search.trim().toLowerCase();
 
-      return productsData.filter(
-        (product) => {
-          const matchesFilter =
-            filter === "All" ||
-            product.type === filter;
 
-          const matchesSearch =
-            searchValue === "" ||
-            product.name
-              .toLowerCase()
-              .includes(searchValue) ||
-            product.category
-              .toLowerCase()
-              .includes(searchValue) ||
-            String(product.price).includes(
-              searchValue
-            ) ||
-            String(product.id).includes(
-              searchValue
-            );
 
-          return (
-            matchesFilter &&
-            matchesSearch
-          );
-        }
-      );
-    }, [filter, search]);
-
-  /* =========================
-     PRODUCT SALES COUNT
-  ========================= */
-
-  const getSalesCount = (
-  productId:number
-)=>{
-
-return purchases.filter(
-(purchase)=>
-
-String(
-purchase.productId ||
-purchase.product?._id ||
-purchase.id
-)
-
-===
-
-String(productId)
-
+const dailyCount =
+products.filter(
+(p)=>p.type==="Daily"
 ).length;
 
 
-};
 
-  return (
-    <main className="admin-products-page">
+const welfareCount =
+products.filter(
+(p)=>p.type==="Welfare"
+).length;
 
-      {/* HEADER */}
 
-      <header className="admin-products-header">
 
-        <button
-          type="button"
-          onClick={() =>
-            navigate("/admin/dashboard")
-          }
-        >
-          <ArrowLeft size={21} />
-        </button>
+const filteredProducts =
+useMemo(()=>{
 
-        <div>
-          <h1>Products</h1>
-          <p>Manage application products</p>
-        </div>
 
-        <span>
-          <Package size={20} />
-        </span>
+const value =
+search
+.trim()
+.toLowerCase();
 
-      </header>
 
-      {/* STATS */}
 
-      <section className="admin-products-stats">
+return products.filter(
+(product)=>{
 
-        <article>
-          <div>
-            <Package size={19} />
-          </div>
 
-          <span>
-            Total Products
-          </span>
+const filterMatch =
+filter==="All" ||
+product.type===filter;
 
-          <strong>
-            {productsData.length}
-          </strong>
-        </article>
 
-        <article>
-          <div>
-            <Package size={19} />
-          </div>
 
-          <span>
-            Daily Products
-          </span>
+const searchMatch =
+value==="" ||
 
-          <strong>
-            {dailyCount}
-          </strong>
-        </article>
+product.name
+.toLowerCase()
+.includes(value) ||
 
-        <article>
-          <div>
-            <ShoppingBag size={19} />
-          </div>
+product.category
+.toLowerCase()
+.includes(value) ||
 
-          <span>
-            Welfare
-          </span>
+String(product.price)
+.includes(value);
 
-          <strong>
-            {welfareCount}
-          </strong>
-        </article>
 
-      </section>
 
-      {/* SEARCH */}
+return (
+filterMatch &&
+searchMatch
+);
 
-      <section className="admin-products-tools">
 
-        <div className="admin-products-search">
+});
 
-          <Search size={17} />
 
-          <input
-            type="text"
-            value={search}
-            placeholder="Search product, category or price..."
-            onChange={(event) =>
-              setSearch(
-                event.target.value
-              )
-            }
-          />
+},[
+products,
+filter,
+search
+]);
 
-        </div>
 
-        {/* FILTER */}
 
-        <div className="admin-products-filters">
+return (
 
-          {(
-            [
-              "All",
-              "Daily",
-              "Welfare",
-            ] as FilterType[]
-          ).map((item) => (
-            <button
-              type="button"
-              key={item}
-              className={
-                filter === item
-                  ? "active"
-                  : ""
-              }
-              onClick={() =>
-                setFilter(item)
-              }
-            >
-              {item}
-            </button>
-          ))}
+<main className="admin-products-page">
 
-        </div>
 
-      </section>
+<header className="admin-products-header">
 
-      {/* LIST */}
 
-      <section className="admin-products-card">
+<button
+type="button"
+onClick={()=>navigate("/admin/dashboard")}
+>
 
-        <div className="admin-products-title">
+<ArrowLeft size={21}/>
 
-          <div>
-            <h2>
-              Product List
-            </h2>
+</button>
 
-            <p>
-              {filteredProducts.length}
-              {" "}products found
-            </p>
-          </div>
 
-        </div>
+<div>
 
-        {filteredProducts.length === 0 ? (
+<h1>
+Products
+</h1>
 
-          <div className="admin-products-empty">
 
-            <Package size={36} />
+<p>
+Manage application products
+</p>
 
-            <strong>
-              No Products Found
-            </strong>
 
-            <span>
-              Try another search or filter.
-            </span>
+</div>
 
-          </div>
 
-        ) : (
+<span>
 
-          <div className="admin-products-list">
+<Package size={20}/>
 
-            {filteredProducts.map(
-              (product) => (
+</span>
 
-                <article
-                  className="admin-product-item"
-                  key={product.id}
-                >
 
-                  {/* IMAGE */}
+</header>
 
-                  <div className="admin-product-image">
 
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      onError={(event) => {
-                        event.currentTarget.style.display =
-                          "none";
-                      }}
-                    />
 
-                    <Package size={28} />
+<section className="admin-products-stats">
 
-                  </div>
 
-                  {/* INFO */}
+<article>
 
-                  <div className="admin-product-info">
+<div>
+<Package size={19}/>
+</div>
 
-                    <div className="admin-product-name">
+<span>
+Total Products
+</span>
 
-                      <strong>
-                        {product.name}
-                      </strong>
 
-                      {product.badge && (
-                        <small>
-                          {product.badge}
-                        </small>
-                      )}
+<strong>
+{products.length}
+</strong>
 
-                    </div>
 
-                    <span>
-                      {product.category}
-                    </span>
+</article>
 
-                    <span>
-                      {product.validity}
-                    </span>
 
-                    <div className="admin-product-meta">
 
-                      <small>
-                        {product.type}
-                      </small>
 
-                      <small>
-                        {
-loadingSales
+<article>
+
+<div>
+<Package size={19}/>
+</div>
+
+
+<span>
+Daily Products
+</span>
+
+
+<strong>
+{dailyCount}
+</strong>
+
+
+</article>
+
+
+
+
+<article>
+
+<div>
+<ShoppingBag size={19}/>
+</div>
+
+
+<span>
+Welfare
+</span>
+
+
+<strong>
+{welfareCount}
+</strong>
+
+
+</article>
+
+
+</section>
+
+
+
+
+
+<section className="admin-products-tools">
+
+
+<div className="admin-products-search">
+
+
+<Search size={17}/>
+
+
+<input
+
+type="text"
+
+value={search}
+
+placeholder="Search product..."
+
+onChange={(e)=>
+setSearch(e.target.value)
+}
+
+/>
+
+
+</div>
+
+
+
+<div className="admin-products-filters">
+
+
+{
+(
+[
+"All",
+"Daily",
+"Welfare"
+] as FilterType[]
+)
+.map(
+(item)=>(
+
+
+<button
+
+key={item}
+
+className={
+filter===item
 ?
-"Loading..."
+"active"
 :
-getSalesCount(product.id)
+""
 }
-{" "}Sales
-                      </small>
 
-                    </div>
-
-                  </div>
-
-                  {/* PRICE */}
-
-                  <div className="admin-product-right">
-
-                    <strong>
-                      ₹
-                      {product.price.toLocaleString(
-                        "en-GB"
-                      )}
-                    </strong>
-
-                    <span>
-                      #{product.id}
-                    </span>
-
-                  </div>
-
-                </article>
-              )
-            )}
-
-          </div>
-        )}
-
-      </section>
-
-    </main>
-  );
+onClick={()=>
+setFilter(item)
 }
+
+>
+
+{item}
+
+</button>
+
+
+)
+
+)
+
+}
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section className="admin-products-card">
+
+
+<div className="admin-products-title">
+
+<h2>
+Product List
+</h2>
+
+
+<p>
+{filteredProducts.length} products found
+</p>
+
+
+</div>
+
+
+
+{
+loading ?
+
+<div className="admin-products-empty">
+
+<strong>
+Loading Products...
+</strong>
+
+</div>
+
+
+:
+
+filteredProducts.map(
+(product)=>(
+
+
+<article
+
+className="admin-product-item"
+
+key={product.id}
+
+>
+
+
+<div className="admin-product-image">
+
+
+{
+product.image &&
+
+<img
+src={product.image}
+alt={product.name}
+/>
+
+}
+
+
+<Package size={28}/>
+
+
+</div>
+
+
+
+
+<div className="admin-product-info">
+
+
+<strong>
+{product.name}
+</strong>
+
+
+<span>
+{product.validity}
+</span>
+
+
+<div>
+
+<small>
+{product.type}
+</small>
+
+
+<small>
+{product.sales} Sales
+</small>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div className="admin-product-right">
+
+
+<strong>
+
+₹
+{product.price.toLocaleString("en-IN")}
+
+</strong>
+
+
+<span>
+#{product.id}
+</span>
+
+
+</div>
+
+
+
+</article>
+
+
+)
+
+)
+
+
+
+}
+
+
+</section>
+
+
+</main>
+
+
+);
+
+
+}
+
 
 export default AdminProducts;

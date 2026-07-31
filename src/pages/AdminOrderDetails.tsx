@@ -291,7 +291,7 @@ Loading Order...
             <span>Product Name</span>
 
             <strong>
-              {order.name}
+              {order.productName}
             </strong>
           </div>
 
