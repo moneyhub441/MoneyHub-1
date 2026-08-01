@@ -148,10 +148,14 @@ function Products() {
   ] = useState("");
 
   const [
-    loading,
-    setLoading,
-  ] = useState(false);
+  loadingProductId,
+  setLoadingProductId,
+] = useState<number | null>(null);
 
+const [
+  loading,
+  setLoading,
+] = useState(false);
   /* =========================
      PRODUCTS
   ========================= */
@@ -211,9 +215,11 @@ function Products() {
   const handleBuy = async (
     product: Product
   ) => {
-    if (loading) {
-      return;
-    }
+    if (
+  loadingProductId === product.id
+) {
+  return;
+}
 
     setError("");
     setSuccess(false);
@@ -232,7 +238,8 @@ function Products() {
     }
 
     try {
-      setLoading(true);
+      setLoadingProductId(product.id);
+      
 
       /* =====================
          GET SERVER WALLET
@@ -286,7 +293,7 @@ function Products() {
           : "Unable to check wallet balance."
       );
     } finally {
-      setLoading(false);
+      setLoadingProductId(null);
     }
   };
 
@@ -850,26 +857,27 @@ function Products() {
 
                   </div>
 
-                  <button
-                    type="button"
-                    className="product-buy-button"
-                    disabled={loading}
-                    onClick={() =>
-                      handleBuy(
-                        product
-                      )
-                    }
-                  >
+                 <button
+  type="button"
+  className="product-buy-button"
+  disabled={
+    loadingProductId === product.id
+  }
+  onClick={() =>
+    handleBuy(product)
+  }
+>
+  <ShoppingCart
+    size={17}
+  />
 
-                    <ShoppingCart
-                      size={17}
-                    />
+  {
+    loadingProductId === product.id
+      ? "Please Wait..."
+      : "Buy Now"
+  }
 
-                    {loading
-                      ? "Please Wait..."
-                      : "Buy Now"}
-
-                  </button>
+</button>
 
                 </div>
 
