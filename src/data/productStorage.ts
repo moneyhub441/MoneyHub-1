@@ -1,4 +1,5 @@
-export type ProductType = "Daily" | "Welfare";
+export type ProductType = "Daily" | "VIP";
+
 
 export type Product = {
   id: number;
@@ -15,162 +16,154 @@ export type Product = {
 };
 
 
+
 export const defaultProducts: Product[] = [
 
   // =====================
-  // DAILY PRODUCTS
+  // NORMAL PRODUCTS
   // =====================
 
   {
-    id: 1,
-    name: "Special Product",
-    price: 700,
-    image: "/products/product-1.png",
+    id:1,
+    name:"Starter Plan",
+    price:290,
+    image:"/products/product-1.png",
 
-    dailyIncome: 270,
-    totalIncome: 13500,
-    duration: 50,
+    dailyIncome:8,
+    totalIncome:400,
+    duration:50,
 
-    type: "Daily",
-    badge: "POPULAR",
+    type:"Daily",
+    badge:"NEW",
   },
 
 
   {
-    id: 2,
-    name: "Product 2",
-    price: 1200,
-    image: "/products/product-2.png",
+    id:2,
+    name:"Basic Plan",
+    price:500,
+    image:"/products/product-2.png",
 
-    dailyIncome: 450,
-    totalIncome: 22500,
-    duration: 50,
+    dailyIncome:15,
+    totalIncome:750,
+    duration:50,
 
-    type: "Daily",
+    type:"Daily",
   },
 
 
   {
-    id: 3,
-    name: "Product 3",
-    price: 2500,
-    image: "/products/product-3.png",
+    id:3,
+    name:"Silver Plan",
+    price:800,
+    image:"/products/product-3.png",
 
-    dailyIncome: 900,
-    totalIncome: 45000,
-    duration: 50,
+    dailyIncome:25,
+    totalIncome:1250,
+    duration:50,
 
-    type: "Daily",
+    type:"Daily",
+    badge:"POPULAR",
   },
 
 
   {
-    id: 4,
-    name: "Product 4",
-    price: 5000,
-    image: "/products/product-4.png",
+    id:4,
+    name:"Gold Plan",
+    price:1200,
+    image:"/products/product-4.png",
 
-    dailyIncome: 1800,
-    totalIncome: 90000,
-    duration: 50,
+    dailyIncome:40,
+    totalIncome:2000,
+    duration:50,
 
-    type: "Daily",
-  },
-
-
-  // =====================
-  // NEW DAILY PLANS
-  // =====================
-
-
-  {
-    id: 5,
-    name: "Starter Plan",
-    price: 290,
-    image: "/products/product-1.png",
-
-    dailyIncome: 100,
-    totalIncome: 5000,
-    duration: 50,
-
-    type: "Daily",
-    badge: "NEW",
+    type:"Daily",
   },
 
 
   {
-    id: 6,
-    name: "Silver Plan",
-    price: 580,
-    image: "/products/product-2.png",
+    id:5,
+    name:"Premium Plan",
+    price:2000,
+    image:"/products/product-1.png",
 
-    dailyIncome: 220,
-    totalIncome: 11000,
-    duration: 50,
+    dailyIncome:70,
+    totalIncome:3500,
+    duration:50,
 
-    type: "Daily",
+    type:"Daily",
   },
 
 
   {
-    id: 7,
-    name: "Gold Plan",
-    price: 870,
-    image: "/products/product-3.png",
+    id:6,
+    name:"Growth Plan",
+    price:3000,
+    image:"/products/product-2.png",
 
-    dailyIncome: 330,
-    totalIncome: 16500,
-    duration: 50,
+    dailyIncome:110,
+    totalIncome:5500,
+    duration:50,
 
-    type: "Daily",
+    type:"Daily",
   },
 
 
   {
-    id: 8,
-    name: "Premium Plan",
-    price: 1160,
-    image: "/products/product-4.png",
+    id:7,
+    name:"Business Plan",
+    price:5000,
+    image:"/products/product-3.png",
 
-    dailyIncome: 450,
-    totalIncome: 22500,
-    duration: 50,
+    dailyIncome:180,
+    totalIncome:9000,
+    duration:50,
 
-    type: "Daily",
-    badge: "PREMIUM",
-  },
-
-
-  // =====================
-  // WELFARE PRODUCTS
-  // =====================
-
-
-  {
-    id: 101,
-    name: "Welfare Product 1",
-    price: 500,
-    image: "/products/product-1.png",
-
-    dailyIncome: 180,
-    totalIncome: 9000,
-    duration: 50,
-
-    type: "Welfare",
+    type:"Daily",
+    badge:"HOT",
   },
 
 
   {
-    id: 102,
-    name: "Welfare Product 2",
-    price: 1000,
-    image: "/products/product-2.png",
+    id:8,
+    name:"Advance Plan",
+    price:7500,
+    image:"/products/product-4.png",
 
-    dailyIncome: 360,
-    totalIncome: 18000,
-    duration: 50,
+    dailyIncome:260,
+    totalIncome:13000,
+    duration:50,
 
-    type: "Welfare",
+    type:"Daily",
+  },
+
+
+  {
+    id:9,
+    name:"Pro Plan",
+    price:10000,
+    image:"/products/product-1.png",
+
+    dailyIncome:350,
+    totalIncome:17500,
+    duration:50,
+
+    type:"Daily",
+  },
+
+
+  {
+    id:10,
+    name:"Elite Plan",
+    price:15000,
+    image:"/products/product-2.png",
+
+    dailyIncome:520,
+    totalIncome:26000,
+    duration:50,
+
+    type:"Daily",
+    badge:"PREMIUM",
   },
 
 
@@ -180,47 +173,77 @@ export const defaultProducts: Product[] = [
 
 
   {
-    id: 201,
-    name: "VIP 1",
-    price: 290,
-    image: "/products/product-1.png",
+    id:101,
+    name:"VIP Silver",
+    price:25000,
+    image:"/products/vip-1.png",
 
-    dailyIncome: 120,
-    totalIncome: 6000,
-    duration: 50,
+    dailyIncome:900,
+    totalIncome:45000,
+    duration:50,
 
-    type: "Welfare",
-    badge: "VIP",
+    type:"VIP",
+    badge:"VIP",
   },
 
 
   {
-    id: 202,
-    name: "VIP 2",
-    price: 580,
-    image: "/products/product-2.png",
+    id:102,
+    name:"VIP Gold",
+    price:50000,
+    image:"/products/vip-2.png",
 
-    dailyIncome: 250,
-    totalIncome: 12500,
-    duration: 50,
+    dailyIncome:1800,
+    totalIncome:90000,
+    duration:50,
 
-    type: "Welfare",
-    badge: "VIP",
+    type:"VIP",
+    badge:"VIP",
   },
 
 
   {
-    id: 203,
-    name: "VIP 3",
-    price: 1160,
-    image: "/products/product-3.png",
+    id:103,
+    name:"VIP Platinum",
+    price:75000,
+    image:"/products/vip-3.png",
 
-    dailyIncome: 500,
-    totalIncome: 25000,
-    duration: 50,
+    dailyIncome:2800,
+    totalIncome:140000,
+    duration:50,
 
-    type: "Welfare",
-    badge: "VIP",
+    type:"VIP",
+    badge:"VIP",
+  },
+
+
+  {
+    id:104,
+    name:"VIP Diamond",
+    price:100000,
+    image:"/products/vip-1.png",
+
+    dailyIncome:4000,
+    totalIncome:200000,
+    duration:50,
+
+    type:"VIP",
+    badge:"VIP",
+  },
+
+
+  {
+    id:105,
+    name:"VIP Royal",
+    price:150000,
+    image:"/products/vip-2.png",
+
+    dailyIncome:6000,
+    totalIncome:300000,
+    duration:50,
+
+    type:"VIP",
+    badge:"VIP",
   },
 
 ];
@@ -241,15 +264,13 @@ export const getProducts = (): Product[] => {
       );
 
 
-    if (saved) {
+    if(saved){
 
       const parsed =
         JSON.parse(saved);
 
 
-      if (
-        Array.isArray(parsed)
-      ) {
+      if(Array.isArray(parsed)){
 
         return parsed;
 
@@ -260,9 +281,7 @@ export const getProducts = (): Product[] => {
 
     localStorage.setItem(
       "products",
-      JSON.stringify(
-        defaultProducts
-      )
+      JSON.stringify(defaultProducts)
     );
 
 
@@ -285,13 +304,11 @@ export const getProducts = (): Product[] => {
 
 export const saveProducts = (
   products: Product[]
-) => {
+)=>{
 
   localStorage.setItem(
     "products",
-    JSON.stringify(
-      products
-    )
+    JSON.stringify(products)
   );
 
 };
