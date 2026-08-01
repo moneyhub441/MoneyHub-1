@@ -1,7 +1,6 @@
 import { X, Info } from "lucide-react";
 import "../PlatformInfo.css";
 
-
 type Props = {
   close:()=>void;
 };
