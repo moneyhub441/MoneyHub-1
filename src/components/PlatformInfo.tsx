@@ -1,5 +1,5 @@
 import { X, Info } from "lucide-react";
-import "./PlatformInfo.css";
+import "../PlatformInfo.css";
 
 
 type Props = {
