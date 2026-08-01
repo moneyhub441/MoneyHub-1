@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const Wallet = require("./models/Wallet");
 const Transaction = require("./models/Transaction");
+
 const purchaseRoutes =
   require("./routes/purchaseRoutes");
 const walletRoutes =
@@ -52,6 +53,10 @@ app.use(
 
 const connectDB = async () => {
   try {
+    console.log(
+  "MONGO URI EXISTS:",
+  !!process.env.MONGO_URI
+);
     if (!process.env.MONGO_URI) {
       throw new Error(
         "MONGO_URI is missing from backend/.env"
@@ -59,8 +64,11 @@ const connectDB = async () => {
     }
 
     await mongoose.connect(
-      process.env.MONGO_URI
-    );
+  process.env.MONGO_URI,
+  {
+    serverSelectionTimeoutMS: 30000,
+  }
+);
 
     console.log(
       "MongoDB connected successfully"
@@ -71,7 +79,7 @@ const connectDB = async () => {
       error.message
     );
 
-    process.exit(1);
+    
   }
 };
 
@@ -432,16 +440,18 @@ app.get(
       ========================= */
 
       wallet.balance =
-        Number(
-          wallet.balance || 0
-        ) + paymentAmount;
+Number(wallet.balance || 0)
++
+paymentAmount;
 
-      wallet.totalAdded =
-        Number(
-          wallet.totalAdded || 0
-        ) + paymentAmount;
 
-      await wallet.save();
+wallet.totalAdded =
+Number(wallet.totalAdded || 0)
++
+paymentAmount;
+
+
+await wallet.save();
 
       /* =========================
          CREATE TRANSACTION
@@ -512,7 +522,7 @@ app.get(
         alreadyCredited: false,
 
         message:
-          "Payment verified and wallet credited",
+          "Payment successful. Balance added to your wallet.",
 
         orderId,
 
@@ -591,19 +601,27 @@ app.use((req, res) => {
 const PORT =
   process.env.PORT || 5000;
 
+
 const startServer = async () => {
+
   await connectDB();
 
   app.listen(PORT, () => {
+
     console.log(
       `Money Hub server running on http://localhost:${PORT}`
     );
+
   });
+
 };
 
 
 if (require.main === module) {
+
   startServer();
+
 }
+connectDB();
 
 module.exports = app;
