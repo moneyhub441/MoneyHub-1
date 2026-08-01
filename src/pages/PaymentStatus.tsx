@@ -1,3 +1,4 @@
+import "../css/PaymentStatus.css";
 import {
   CheckCircle2,
   LoaderCircle,
@@ -213,117 +214,126 @@ function PaymentStatus() {
   }, [API_URL]);
 
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent:
-          "center",
-        padding: "20px",
-        background:
-          "#f7f7f7",
-      }}
-    >
-      <section
-        style={{
-          width: "100%",
-          maxWidth: "420px",
-          background: "#fff",
-          borderRadius: "20px",
-          padding:
-            "35px 20px",
-          textAlign:
-            "center",
-        }}
+  <main className="payment-status-page">
+
+    <section className="payment-status-card">
+
+
+      {/* ICON */}
+
+      <div
+        className={`payment-icon ${paymentState}`}
       >
 
-        {/* ICON */}
-
-        {paymentState ===
-          "checking" && (
+        {paymentState === "checking" && (
           <LoaderCircle
             size={48}
           />
         )}
 
-        {paymentState ===
-          "success" && (
+
+        {paymentState === "success" && (
           <CheckCircle2
             size={48}
           />
         )}
 
-        {paymentState ===
-          "failed" && (
+
+        {paymentState === "failed" && (
           <XCircle
             size={48}
           />
         )}
 
-        {/* TITLE */}
+      </div>
 
-        <h1>
-          {paymentState ===
-          "checking"
-            ? "Checking Payment"
-            : paymentState ===
-                "success"
-              ? "Payment Successful"
-              : "Payment Failed"}
-        </h1>
 
-        {/* MESSAGE */}
 
-        <p>
-          {message}
-        </p>
+      {/* TITLE */}
 
-        {/* AMOUNT */}
+      <h1>
 
-        {paymentState ===
-          "success" &&
-          amount > 0 && (
-            <h2>
-              ₹
-              {amount.toLocaleString(
-                "en-IN"
-              )}
-            </h2>
+        {paymentState === "checking"
+          ? "Checking Payment"
+          : paymentState === "success"
+          ? "Payment Successful"
+          : "Payment Failed"}
+
+      </h1>
+
+
+
+
+      {/* MESSAGE */}
+
+      <p className="payment-message">
+
+        {message}
+
+      </p>
+
+
+
+
+
+      {/* AMOUNT */}
+
+      {paymentState === "success" &&
+        amount > 0 && (
+
+        <h2 className="payment-amount">
+
+          ₹
+          {amount.toLocaleString(
+            "en-IN"
           )}
 
-        {/* BUTTON */}
+        </h2>
 
-        {paymentState !==
-          "checking" && (
-          <button
-            type="button"
-            onClick={() =>
-              navigate(
-                paymentState ===
-                  "success"
-                  ? "/wallet"
-                  : "/add-balance",
-                {
-                  replace:
-                    true,
-                }
-              )
-            }
-          >
-            <WalletCards
-              size={18}
-            />
+      )}
 
-            {paymentState ===
-            "success"
-              ? "Go to Wallet"
-              : "Try Again"}
-          </button>
-        )}
 
-      </section>
-    </main>
+
+
+
+
+      {/* BUTTON */}
+
+      {paymentState !== "checking" && (
+
+        <button
+          className="payment-button"
+          type="button"
+
+          onClick={() =>
+            navigate(
+              paymentState === "success"
+                ? "/wallet"
+                : "/add-balance",
+              {
+                replace:true,
+              }
+            )
+          }
+        >
+
+          <WalletCards
+            size={18}
+          />
+
+
+          {paymentState === "success"
+            ? "Go to Wallet"
+            : "Try Again"}
+
+        </button>
+
+      )}
+
+
+    </section>
+
+  </main>
   );
 }
 

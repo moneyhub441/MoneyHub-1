@@ -1,0 +1,292 @@
+.payment-status-page {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: #f3f7f5;
+
+}
+
+
+/* CARD */
+
+.payment-status-card {
+
+  width: 100%;
+
+  max-width: 420px;
+
+  background: #ffffff;
+
+  border-radius: 28px;
+
+  padding: 40px 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,0.08);
+
+  animation: slideUp .35s ease;
+
+}
+
+
+
+/* ICON */
+
+.payment-icon {
+
+  width: 90px;
+
+  height: 90px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+
+/* CHECKING */
+
+.payment-icon.checking {
+
+  background: #dcfce7;
+
+  color: #16a34a;
+
+}
+
+
+
+/* SUCCESS */
+
+.payment-icon.success {
+
+  background: #dcfce7;
+
+  color: #15803d;
+
+}
+
+
+
+/* FAILED */
+
+.payment-icon.failed {
+
+  background: #fee2e2;
+
+  color: #dc2626;
+
+}
+
+
+
+/* TITLE */
+
+.payment-status-card h1 {
+
+  margin: 15px 0 10px;
+
+  font-size: 26px;
+
+  font-weight: 800;
+
+  color: #111827;
+
+}
+
+
+
+/* MESSAGE */
+
+.payment-message {
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: #6b7280;
+
+  margin: 0;
+
+}
+
+
+
+/* AMOUNT */
+
+.payment-amount {
+
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding: 12px 30px;
+
+  border-radius: 18px;
+
+  background: #dcfce7;
+
+  color: #15803d;
+
+  font-size: 32px;
+
+  font-weight: 900;
+
+}
+
+
+
+/* BUTTON */
+
+.payment-button {
+
+  margin-top: 30px;
+
+  width: 100%;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #16a34a;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+}
+
+
+
+.payment-button:hover {
+
+  background: #15803d;
+
+  transform: translateY(-2px);
+
+}
+
+
+
+/* LOADER ROTATE */
+
+.payment-icon.checking svg {
+
+  animation: rotate 1s linear infinite;
+
+}
+
+
+
+@keyframes rotate {
+
+  from {
+
+    transform: rotate(0deg);
+
+  }
+
+  to {
+
+    transform: rotate(360deg);
+
+  }
+
+}
+
+
+
+/* CARD ANIMATION */
+
+@keyframes slideUp {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:430px) {
+
+
+  .payment-status-page {
+
+    padding: 15px;
+
+  }
+
+
+  .payment-status-card {
+
+    padding: 35px 20px;
+
+    border-radius: 24px;
+
+  }
+
+
+  .payment-status-card h1 {
+
+    font-size: 22px;
+
+  }
+
+
+  .payment-amount {
+
+    font-size: 28px;
+
+  }
+
+
+}
