@@ -28,12 +28,12 @@ export const defaultProducts: Product[] = [
   {
     id:1,
     name:"Starter Plan",
-    price:300,
+     price:300,
     image:"/products/product-1.png",
 
-    dailyIncome:30,
-    totalIncome:600,
-    duration:10,
+    dailyIncome:135,
+    totalIncome:1080,
+    duration:8,
 
     type:"Daily",
     badge:"NEW",
@@ -46,8 +46,8 @@ export const defaultProducts: Product[] = [
     price:500,
     image:"/products/product-2.png",
 
-    dailyIncome:45,
-    totalIncome:900,
+    dailyIncome:225,
+    totalIncome:2700,
     duration:12,
 
     type:"Daily",
@@ -57,12 +57,12 @@ export const defaultProducts: Product[] = [
   {
     id:3,
     name:"Silver Plan",
-    price:700,
+   price:700,
     image:"/products/product-3.png",
 
-    dailyIncome:60,
-    totalIncome:1200,
-    duration:14,
+    dailyIncome:315,
+    totalIncome:4725,
+    duration:15,
 
     type:"Daily",
     badge:"POPULAR",
@@ -72,12 +72,12 @@ export const defaultProducts: Product[] = [
   {
     id:4,
     name:"Gold Plan",
-    price:900,
+   price:900,
     image:"/products/product-4.png",
 
-    dailyIncome:75,
-    totalIncome:1500,
-    duration:16,
+    dailyIncome:405,
+    totalIncome:7290,
+    duration:18,
 
     type:"Daily",
   },
@@ -89,9 +89,9 @@ export const defaultProducts: Product[] = [
     price:1100,
     image:"/products/product-1.png",
 
-    dailyIncome:90,
-    totalIncome:1800,
-    duration:18,
+    dailyIncome:495,
+    totalIncome:9900,
+    duration:20,
 
     type:"Daily",
   },
@@ -103,9 +103,9 @@ export const defaultProducts: Product[] = [
     price:1300,
     image:"/products/product-2.png",
 
-    dailyIncome:105,
-    totalIncome:2100,
-    duration:20,
+    dailyIncome:585,
+    totalIncome:12870,
+    duration:22,
 
     type:"Daily",
   },
@@ -114,12 +114,12 @@ export const defaultProducts: Product[] = [
   {
     id:7,
     name:"Business Plan",
-    price:1500,
+      price:1500,
     image:"/products/product-3.png",
 
-    dailyIncome:120,
-    totalIncome:2400,
-    duration:22,
+    dailyIncome:675,
+    totalIncome:16875,
+    duration:25,
 
     type:"Daily",
     badge:"HOT",
@@ -129,12 +129,12 @@ export const defaultProducts: Product[] = [
   {
     id:8,
     name:"Advance Plan",
-    price:1700,
+      price:1700,
     image:"/products/product-4.png",
 
-    dailyIncome:135,
-    totalIncome:2700,
-    duration:24,
+    dailyIncome:765,
+    totalIncome:19890,
+    duration:26,
 
     type:"Daily",
   },
@@ -146,9 +146,9 @@ export const defaultProducts: Product[] = [
     price:1900,
     image:"/products/product-1.png",
 
-    dailyIncome:150,
-    totalIncome:3000,
-    duration:26,
+    dailyIncome:855,
+    totalIncome:23940,
+    duration:28,
 
     type:"Daily",
   },
@@ -160,9 +160,9 @@ export const defaultProducts: Product[] = [
     price:2000,
     image:"/products/product-2.png",
 
-    dailyIncome:160,
-    totalIncome:3200,
-    duration:28,
+    dailyIncome:900,
+    totalIncome:27000,
+    duration:30,
 
     type:"Daily",
     badge:"PREMIUM",
@@ -172,12 +172,12 @@ export const defaultProducts: Product[] = [
   {
     id:11,
     name:"Power Plan",
-    price:2200,
-    image:"/products/product-3.png",
+     price:1000,
+    image:"/products/vip-1.png",
 
-    dailyIncome:175,
-    totalIncome:3500,
-    duration:20,
+    dailyIncome:450,
+    totalIncome:11250,
+    duration:25,
 
     type:"Daily",
   },
@@ -186,12 +186,12 @@ export const defaultProducts: Product[] = [
   {
     id:12,
     name:"Smart Plan",
-    price:2500,
-    image:"/products/product-4.png",
+   price:1500,
+    image:"/products/vip-2.png",
 
-    dailyIncome:190,
-    totalIncome:3800,
-    duration:22,
+    dailyIncome:675,
+    totalIncome:16875,
+    duration:25,
 
     type:"Daily",
   },
@@ -200,11 +200,11 @@ export const defaultProducts: Product[] = [
   {
     id:13,
     name:"Master Plan",
-    price:2800,
-    image:"/products/product-1.png",
+     price:2000,
+    image:"/products/vip-3.png",
 
-    dailyIncome:210,
-    totalIncome:4200,
+    dailyIncome:900,
+    totalIncome:22500,
     duration:25,
 
     type:"Daily",
@@ -214,12 +214,12 @@ export const defaultProducts: Product[] = [
   {
     id:14,
     name:"Royal Plan",
-    price:3000,
-    image:"/products/product-2.png",
+     price:2500,
+    image:"/products/vip-1.png",
 
-    dailyIncome:230,
-    totalIncome:4600,
-    duration:28,
+    dailyIncome:1125,
+    totalIncome:28125,
+    duration:25,
 
     type:"Daily",
     badge:"ROYAL",
@@ -229,12 +229,12 @@ export const defaultProducts: Product[] = [
   {
     id:15,
     name:"Legend Plan",
-    price:3500,
-    image:"/products/product-3.png",
+   price:3000,
+    image:"/products/vip-2.png",
 
-    dailyIncome:250,
-    totalIncome:5000,
-    duration:30,
+    dailyIncome:1350,
+    totalIncome:33750,
+    duration:25,
 
     type:"Daily",
     badge:"TOP",
@@ -252,8 +252,8 @@ export const defaultProducts: Product[] = [
     price:1000,
     image:"/products/vip-1.png",
 
-    dailyIncome:80,
-    totalIncome:2000,
+   dailyIncome:450,
+    totalIncome:11250,
     duration:25,
 
     type:"Welfare",
@@ -267,8 +267,8 @@ export const defaultProducts: Product[] = [
     price:1500,
     image:"/products/vip-2.png",
 
-    dailyIncome:120,
-    totalIncome:3000,
+     dailyIncome:675,
+    totalIncome:16875,
     duration:25,
 
     type:"Welfare",
@@ -282,8 +282,8 @@ export const defaultProducts: Product[] = [
     price:2000,
     image:"/products/vip-3.png",
 
-    dailyIncome:160,
-    totalIncome:4000,
+    dailyIncome:900,
+    totalIncome:22500,
     duration:25,
 
     type:"Welfare",
@@ -297,8 +297,8 @@ export const defaultProducts: Product[] = [
     price:2500,
     image:"/products/vip-1.png",
 
-    dailyIncome:200,
-    totalIncome:5000,
+     dailyIncome:1125,
+    totalIncome:28125,
     duration:25,
 
     type:"Welfare",
@@ -312,9 +312,9 @@ export const defaultProducts: Product[] = [
     price:3000,
     image:"/products/vip-2.png",
 
-    dailyIncome:250,
-    totalIncome:7500,
-    duration:30,
+    dailyIncome:1350,
+    totalIncome:33750,
+    duration:25,
 
     type:"Welfare",
     badge:"VIP",
