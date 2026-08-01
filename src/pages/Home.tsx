@@ -67,7 +67,7 @@ const recentTransactions: RecentTransaction[] =
       {
         title: "Daily Income",
         type: "credit" as const,
-        amount: 270,
+        amount: 315,
       },
       {
         title: "Product Purchased",
@@ -520,7 +520,7 @@ function Home() {
               </span>
 
               <strong>
-                ₹13,500
+                ₹4,715
               </strong>
 
             </div>
@@ -534,7 +534,7 @@ function Home() {
               </span>
 
               <strong>
-                50 Days
+                15 Days
               </strong>
 
             </div>
