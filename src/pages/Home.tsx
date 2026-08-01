@@ -11,10 +11,11 @@ import {
   UserRound,
   WalletCards,
 } from "lucide-react";
-
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import BottomNav from "../components/BottomNav";
+import PlatformInfo from "../components/PlatformInfo";
 import "../css/Home.css";
 
 /* =========================
@@ -98,6 +99,7 @@ const recentTransactions: RecentTransaction[] =
 
 function Home() {
   const navigate = useNavigate();
+  const [showPlatformInfo, setShowPlatformInfo] = useState(true);
 
   /* =========================
      CURRENT USER
@@ -220,6 +222,15 @@ function Home() {
 
   return (
     <main className="home-page">
+
+
+      {showPlatformInfo && (
+        <PlatformInfo
+          close={() =>
+            setShowPlatformInfo(false)
+          }
+        />
+      )}
 
       {/* =====================
           HEADER
