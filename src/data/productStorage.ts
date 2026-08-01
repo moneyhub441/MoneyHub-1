@@ -2,17 +2,17 @@ export type ProductType = "Daily" | "VIP";
 
 
 export type Product = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
+  id:number;
+  name:string;
+  price:number;
+  image:string;
 
-  dailyIncome: number;
-  totalIncome: number;
-  duration: number;
+  dailyIncome:number;
+  totalIncome:number;
+  duration:number;
 
-  type: ProductType;
-  badge?: string;
+  type:ProductType;
+  badge?:string;
 };
 
 
@@ -20,18 +20,19 @@ export type Product = {
 export const defaultProducts: Product[] = [
 
   // =====================
-  // NORMAL PRODUCTS
+  // DAILY PRODUCTS
   // =====================
+
 
   {
     id:1,
     name:"Starter Plan",
-    price:290,
+    price:300,
     image:"/products/product-1.png",
 
-    dailyIncome:8,
-    totalIncome:400,
-    duration:50,
+    dailyIncome:23,
+    totalIncome:525,
+    duration:10,
 
     type:"Daily",
     badge:"NEW",
@@ -44,9 +45,9 @@ export const defaultProducts: Product[] = [
     price:500,
     image:"/products/product-2.png",
 
-    dailyIncome:15,
-    totalIncome:750,
-    duration:50,
+    dailyIncome:38,
+    totalIncome:875,
+    duration:12,
 
     type:"Daily",
   },
@@ -55,12 +56,12 @@ export const defaultProducts: Product[] = [
   {
     id:3,
     name:"Silver Plan",
-    price:800,
+    price:700,
     image:"/products/product-3.png",
 
-    dailyIncome:25,
-    totalIncome:1250,
-    duration:50,
+    dailyIncome:47,
+    totalIncome:1225,
+    duration:16,
 
     type:"Daily",
     badge:"POPULAR",
@@ -70,12 +71,12 @@ export const defaultProducts: Product[] = [
   {
     id:4,
     name:"Gold Plan",
-    price:1200,
+    price:900,
     image:"/products/product-4.png",
 
-    dailyIncome:40,
-    totalIncome:2000,
-    duration:50,
+    dailyIncome:50,
+    totalIncome:1575,
+    duration:20,
 
     type:"Daily",
   },
@@ -84,12 +85,12 @@ export const defaultProducts: Product[] = [
   {
     id:5,
     name:"Premium Plan",
-    price:2000,
+    price:1100,
     image:"/products/product-1.png",
 
-    dailyIncome:70,
-    totalIncome:3500,
-    duration:50,
+    dailyIncome:55,
+    totalIncome:1925,
+    duration:25,
 
     type:"Daily",
   },
@@ -98,12 +99,12 @@ export const defaultProducts: Product[] = [
   {
     id:6,
     name:"Growth Plan",
-    price:3000,
+    price:1300,
     image:"/products/product-2.png",
 
-    dailyIncome:110,
-    totalIncome:5500,
-    duration:50,
+    dailyIncome:54,
+    totalIncome:2275,
+    duration:30,
 
     type:"Daily",
   },
@@ -112,12 +113,12 @@ export const defaultProducts: Product[] = [
   {
     id:7,
     name:"Business Plan",
-    price:5000,
+    price:1500,
     image:"/products/product-3.png",
 
-    dailyIncome:180,
-    totalIncome:9000,
-    duration:50,
+    dailyIncome:75,
+    totalIncome:2625,
+    duration:25,
 
     type:"Daily",
     badge:"HOT",
@@ -127,12 +128,12 @@ export const defaultProducts: Product[] = [
   {
     id:8,
     name:"Advance Plan",
-    price:7500,
+    price:1700,
     image:"/products/product-4.png",
 
-    dailyIncome:260,
-    totalIncome:13000,
-    duration:50,
+    dailyIncome:85,
+    totalIncome:2975,
+    duration:25,
 
     type:"Daily",
   },
@@ -141,12 +142,12 @@ export const defaultProducts: Product[] = [
   {
     id:9,
     name:"Pro Plan",
-    price:10000,
+    price:1900,
     image:"/products/product-1.png",
 
-    dailyIncome:350,
-    totalIncome:17500,
-    duration:50,
+    dailyIncome:95,
+    totalIncome:3325,
+    duration:25,
 
     type:"Daily",
   },
@@ -155,12 +156,12 @@ export const defaultProducts: Product[] = [
   {
     id:10,
     name:"Elite Plan",
-    price:15000,
+    price:2000,
     image:"/products/product-2.png",
 
-    dailyIncome:520,
-    totalIncome:26000,
-    duration:50,
+    dailyIncome:100,
+    totalIncome:3500,
+    duration:30,
 
     type:"Daily",
     badge:"PREMIUM",
@@ -174,13 +175,13 @@ export const defaultProducts: Product[] = [
 
   {
     id:101,
-    name:"VIP Silver",
-    price:25000,
+    name:"VIP Bronze",
+    price:1000,
     image:"/products/vip-1.png",
 
-    dailyIncome:900,
-    totalIncome:45000,
-    duration:50,
+    dailyIncome:50,
+    totalIncome:1750,
+    duration:15,
 
     type:"VIP",
     badge:"VIP",
@@ -189,13 +190,13 @@ export const defaultProducts: Product[] = [
 
   {
     id:102,
-    name:"VIP Gold",
-    price:50000,
+    name:"VIP Silver",
+    price:1500,
     image:"/products/vip-2.png",
 
-    dailyIncome:1800,
-    totalIncome:90000,
-    duration:50,
+    dailyIncome:75,
+    totalIncome:2625,
+    duration:15,
 
     type:"VIP",
     badge:"VIP",
@@ -204,13 +205,13 @@ export const defaultProducts: Product[] = [
 
   {
     id:103,
-    name:"VIP Platinum",
-    price:75000,
+    name:"VIP Gold",
+    price:2000,
     image:"/products/vip-3.png",
 
-    dailyIncome:2800,
-    totalIncome:140000,
-    duration:50,
+    dailyIncome:100,
+    totalIncome:3500,
+    duration:20,
 
     type:"VIP",
     badge:"VIP",
@@ -219,13 +220,13 @@ export const defaultProducts: Product[] = [
 
   {
     id:104,
-    name:"VIP Diamond",
-    price:100000,
+    name:"VIP Platinum",
+    price:2500,
     image:"/products/vip-1.png",
 
-    dailyIncome:4000,
-    totalIncome:200000,
-    duration:50,
+    dailyIncome:125,
+    totalIncome:4375,
+    duration:25,
 
     type:"VIP",
     badge:"VIP",
@@ -234,13 +235,13 @@ export const defaultProducts: Product[] = [
 
   {
     id:105,
-    name:"VIP Royal",
-    price:150000,
+    name:"VIP Diamond",
+    price:3000,
     image:"/products/vip-2.png",
 
-    dailyIncome:6000,
-    totalIncome:300000,
-    duration:50,
+    dailyIncome:100,
+    totalIncome:5250,
+    duration:30,
 
     type:"VIP",
     badge:"VIP",
@@ -251,10 +252,11 @@ export const defaultProducts: Product[] = [
 
 
 /* =========================
-   GET PRODUCTS
+GET PRODUCTS
 ========================= */
 
-export const getProducts = (): Product[] => {
+
+export const getProducts = ():Product[] => {
 
   try {
 
@@ -281,7 +283,9 @@ export const getProducts = (): Product[] => {
 
     localStorage.setItem(
       "products",
-      JSON.stringify(defaultProducts)
+      JSON.stringify(
+        defaultProducts
+      )
     );
 
 
@@ -299,16 +303,17 @@ export const getProducts = (): Product[] => {
 
 
 /* =========================
-   SAVE PRODUCTS
+SAVE PRODUCTS
 ========================= */
 
+
 export const saveProducts = (
-  products: Product[]
+ products:Product[]
 )=>{
 
-  localStorage.setItem(
-    "products",
-    JSON.stringify(products)
-  );
+ localStorage.setItem(
+  "products",
+  JSON.stringify(products)
+ );
 
 };
