@@ -74,7 +74,7 @@ Platform Info
 
 
 
-<button className="platform-btn">
+<button onClick={close} className="platform-btn">
 
 🌐 Visit Website
 
