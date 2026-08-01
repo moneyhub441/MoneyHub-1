@@ -506,7 +506,7 @@ function Home() {
               </span>
 
               <strong>
-                ₹270
+                ₹315
               </strong>
 
             </div>
