@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
 * {
   box-sizing: border-box;
 }
@@ -8,41 +12,149 @@ body,
   width: 100%;
   min-height: 100%;
   margin: 0;
+  padding: 0;
 }
+
+
+/* =========================
+   HTML
+========================= */
 
 html {
   background: #eef1f0;
+  scroll-behavior: smooth;
 }
+
+
+/* =========================
+   BODY
+========================= */
 
 body {
   min-width: 320px;
-  margin: 0;
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
   color: #171717;
+
   background: #eef1f0;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
 }
 
-button,
-input {
-  font: inherit;
-}
 
-button {
-  -webkit-tap-highlight-color: transparent;
-}
+/* =========================
+   ROOT APP CONTAINER
+========================= */
 
 #root {
   width: 100%;
-  max-width: 430px;
   min-height: 100dvh;
-  margin: 0 auto;
-  background: #fff;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.08);
+
+  background: #ffffff;
 }
 
-@media (max-width: 430px) {
-  #root {
-    max-width: none;
-    box-shadow: none;
+
+/* =========================
+   BUTTON RESET
+========================= */
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   INPUT RESET
+========================= */
+
+input,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+
+
+/* =========================
+   IMAGE RESET
+========================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =========================
+   LINK RESET
+========================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 10px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    background: #ffffff;
   }
+
+  #root {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+  body {
+    min-width: 320px;
+  }
+
 }
