@@ -69,7 +69,7 @@ Platform Info
 
 <div className="platform-row">
 <span>Withdrawals:</span>
-<b>24 Hours</b>
+<b>1 Hours</b>
 </div>
 
 
