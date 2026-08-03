@@ -29,8 +29,7 @@ export const defaultProducts: Product[] = [
     id:1,
     name:"Starter Plan",
      price:300,
-    image:"/products/product-1.png",
-
+image:"/products/vip-3.png",
     dailyIncome:135,
     totalIncome:1080,
     duration:8,
@@ -44,8 +43,7 @@ export const defaultProducts: Product[] = [
     id:2,
     name:"Basic Plan",
     price:500,
-    image:"/products/product-2.png",
-
+image:"/products/vip-3.png",
     dailyIncome:225,
     totalIncome:2700,
     duration:12,
@@ -58,7 +56,7 @@ export const defaultProducts: Product[] = [
     id:3,
     name:"Silver Plan",
    price:700,
-    image:"/products/product-3.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:315,
     totalIncome:4725,
@@ -73,7 +71,7 @@ export const defaultProducts: Product[] = [
     id:4,
     name:"Gold Plan",
    price:900,
-    image:"/products/product-4.png",
+   image:"/products/vip-3.png",
 
     dailyIncome:405,
     totalIncome:7290,
@@ -87,7 +85,7 @@ export const defaultProducts: Product[] = [
     id:5,
     name:"Premium Plan",
     price:1100,
-    image:"/products/product-1.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:495,
     totalIncome:9900,
@@ -101,7 +99,7 @@ export const defaultProducts: Product[] = [
     id:6,
     name:"Growth Plan",
     price:1300,
-    image:"/products/product-2.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:585,
     totalIncome:12870,
@@ -115,7 +113,7 @@ export const defaultProducts: Product[] = [
     id:7,
     name:"Business Plan",
       price:1500,
-    image:"/products/product-3.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:675,
     totalIncome:16875,
@@ -130,7 +128,7 @@ export const defaultProducts: Product[] = [
     id:8,
     name:"Advance Plan",
       price:1700,
-    image:"/products/product-4.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:765,
     totalIncome:19890,
@@ -144,7 +142,7 @@ export const defaultProducts: Product[] = [
     id:9,
     name:"Pro Plan",
     price:1900,
-    image:"/products/product-1.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:855,
     totalIncome:23940,
@@ -158,7 +156,7 @@ export const defaultProducts: Product[] = [
     id:10,
     name:"Elite Plan",
     price:2000,
-    image:"/products/product-2.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:900,
     totalIncome:27000,
@@ -173,7 +171,7 @@ export const defaultProducts: Product[] = [
     id:11,
     name:"Power Plan",
      price:1000,
-    image:"/products/vip-1.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:450,
     totalIncome:11250,
@@ -187,7 +185,7 @@ export const defaultProducts: Product[] = [
     id:12,
     name:"Smart Plan",
    price:1500,
-    image:"/products/vip-2.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:675,
     totalIncome:16875,
@@ -215,7 +213,7 @@ export const defaultProducts: Product[] = [
     id:14,
     name:"Royal Plan",
      price:2500,
-    image:"/products/vip-1.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:1125,
     totalIncome:28125,
@@ -230,7 +228,7 @@ export const defaultProducts: Product[] = [
     id:15,
     name:"Legend Plan",
    price:3000,
-    image:"/products/vip-2.png",
+    image:"/products/vip-3.png",
 
     dailyIncome:1350,
     totalIncome:33750,
@@ -250,7 +248,7 @@ export const defaultProducts: Product[] = [
     id:101,
     name:"VIP Silver",
     price:1000,
-    image:"/products/vip-1.png",
+    image:"/products/vip-3.png",
 
    dailyIncome:450,
     totalIncome:11250,
@@ -265,7 +263,7 @@ export const defaultProducts: Product[] = [
     id:102,
     name:"VIP Gold",
     price:1500,
-    image:"/products/vip-2.png",
+    image:"/products/vip-3.png",
 
      dailyIncome:675,
     totalIncome:16875,
@@ -295,7 +293,7 @@ export const defaultProducts: Product[] = [
     id:104,
     name:"VIP Diamond",
     price:2500,
-    image:"/products/vip-1.png",
+    image:"/products/vip-3.png",
 
      dailyIncome:1125,
     totalIncome:28125,
@@ -310,7 +308,7 @@ export const defaultProducts: Product[] = [
     id:105,
     name:"VIP Royal",
     price:3000,
-    image:"/products/vip-2.png",
+   image:"/products/vip-3.png",
 
     dailyIncome:1350,
     totalIncome:33750,
