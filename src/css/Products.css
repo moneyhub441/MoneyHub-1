@@ -275,15 +275,9 @@
   border: 1px solid #e3eee6;
   border-radius: 15px;
 
-  display: grid;
-  place-items: center;
+  display: block;
 
-  background:
-    linear-gradient(
-      145deg,
-      #f8fff9,
-      #e7f9eb
-    );
+  background: #e7f9eb;
 }
 
 .product-card-image img {
