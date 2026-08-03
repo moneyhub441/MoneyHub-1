@@ -485,22 +485,14 @@ function Home() {
 
           <div className="home-product-image">
 
-            <div className="product-box-art">
+            <div className="home-product-image">
 
-              <Package
-                size={58}
-                strokeWidth={1.4}
-              />
+  <img
+    src="/products/vip-3.png"
+    alt="Money Hub Product"
+  />
 
-              <strong>
-                MONEY
-              </strong>
-
-              <small>
-                HUB
-              </small>
-
-            </div>
+</div>
 
           </div>
 
