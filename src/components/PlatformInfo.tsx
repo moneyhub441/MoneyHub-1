@@ -62,7 +62,7 @@ Platform Info
 
 <div className="platform-row">
 <span>Min Withdrawal:</span>
-<b>₹180 - ₹10000</b>
+<b>₹100 - ₹10000</b>
 </div>
 
 
