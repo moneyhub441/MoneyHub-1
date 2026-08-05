@@ -268,7 +268,8 @@ console.log(
 
       const cashfree =
   await load({
-    mode: "sandbox",
+    // mode: "sandbox",
+    mode: "production",
   });
 
       /* =========================
